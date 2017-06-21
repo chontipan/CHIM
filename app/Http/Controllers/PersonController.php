@@ -2,58 +2,92 @@
 
 namespace App\Http\Controllers;
 
-use App\Person;
 use Illuminate\Http\Request;
+use App\Person;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Matriphe\Imageupload\Imageupload;
+use Matriphe\Imageupload\ImageuploadFacade;
+use Illuminate\Http\UploadedFile;
 
 class PersonController extends Controller
 {
-      public function generalIndex(Request $request)
-      {
-          //$userId = Auth::id();
-          $persons = Person::all();
-          //$branches = DB::table('branches')->where('created_by','=',$userId)->get();
-          return view('user.general.index')
-              ->with('persons', $persons);
-      }
-
-    public function generalCreate(Request $request)
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-            return view('user.general.create');
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        $keyword = $request->get('keyword');
+        //return $request;
+        if ($keyword) {
+
+            $keyword = $request->get('keyword');
+
+            $persons = DB::table('persons')
+                ->Where('identity', 'like', "%$keyword%")
+                ->orWhere('fullname', 'like', "%$keyword%")
+                ->orderBy('created_at', 'desc')
+                ->paginate(20);
+            //return $persons;
+
+            return view('user.person.index')
+                ->with('persons', $persons);
+        }else {
+
+            $persons = Person::orderBy('created_at', 'desc')
+                ->paginate(20);
+            //return $persons;
+            return view('user.person.index')
+                ->with('persons', $persons);
+        }
+
+    }
+
+    public function create(Request $request)
+    {
+        return view('user.person.create');
     }
 
     public function postCreate(Request $request)
     {
-       // $currentUser = Auth::id();
-        $form = $request->get('branch');
-        $branchNew = new Branch();
-       // $branchNew->createdby()->associate($currentUser);
-        $branchNew->fill($form);
-        $branchNew->save();
-        return redirect('/admin/branch');
-    }
 
-    public function edit(Request $request, $id)
-    {
-        $branch = Branch::where('id', $id)->first();
-        return view('admin.branch.edit')
-            ->with('branch', $branch);
-    }
+        if($request->hasFile('pic_path')) {
+            $result = ImageuploadFacade::upload($request->file('pic_path'));
+            $dimension = $result['dimensions'];
+            $size400 = $dimension['size400'];
+            $file_path = $size400['filedir'];
+        }
 
-    public function postEdit(Request $request, $id)
-    {
-        $form = $request->get('branch');
-        $branchEdit = Branch::where('id', $id)->first();
-        $branchEdit->fill($form);
-        $branchEdit->save();
-        return redirect('/admin/branch');
-    }
+        $form = $request->get('person');
+        $newPerson = new Person();
 
+        $newPerson->fill($form);
+
+        if($request->hasFile('pic_path')){
+            $newPerson->pic_path = $file_path;
+        }
+        $newPerson->save();
+        return redirect('/person');
+    }
     public function postDelete(Request $request, $id)
     {
-        $branchDelete = Branch::where('id', $id)->first();
-        $branchDelete->delete();
-        return redirect('/admin/branch');
+        $currentUser = Auth::id();
+        $personDelete = Person::where('id', $id)->first();
+        $personDelete->deleted_by()->associate($currentUser);
+        $personDelete->save();
+        $personDelete->delete();
+        return redirect('/person');
     }
 }

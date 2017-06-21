@@ -19,13 +19,16 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-Route::get('/general', "PersonController@generalIndex");
 
-Route::get('/general/create', "PersonController@generalCreate");
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/person', "PersonController@index");
+Route::get('/person/create', "PersonController@create");
+Route::post('/person/create', "PersonController@postCreate");
+Route::post('/person/{id}/delete', "PersonController@postDelete");
+
+Route::get('/person/pdf/{id}', "PDFController@pdfPerson");
+
+

@@ -13,21 +13,12 @@ class CreateTbls extends Migration
      */
     public function up()
     {
-        Schema::create('person_types', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->timestamps();
-        });
 
         Schema::create('persons', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('prefix')->nullable();
-            $table->string('name');
-            $table->string('surname')->nullable();
+            $table->string('fullname');
             $table->string('identity')->nullable();
-            $table->json('details')->nullable();
             $table->string('pic_path')->nullable();
-            $table->integer('type_id')->nullable()->unsigned();
             $table->integer('user_id')->nullable()->unsigned();
             $table->softDeletes();
             $table->timestamps();
@@ -46,7 +37,6 @@ class CreateTbls extends Migration
     public function down()
     {
         //
-        Schema::drop('person_types');
         Schema::drop('persons');
     }
 }
