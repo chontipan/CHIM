@@ -11,3 +11,5 @@ npm-debug.log
 .env
 storage/.DS_Store
 .DS_Store
+public/uploads/images/64459.jpg
+public/uploads/images/64459_size400.jpg
