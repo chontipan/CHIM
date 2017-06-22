@@ -78,6 +78,16 @@
                 @endif
 
             </tr>
+        @else
+            <tr>
+                @if($person->identity)
+                    <td colspan="4">ไม่ระบุประเภทบัตรประจำตัว :
+                        <label><?php echo $person->identity ?> </label></td>
+                @else
+                    <td colspan="4">ไม่ระบุประเภทบัตรประจำตัว : <label> - </label></td>
+                @endif
+
+            </tr>
         @endif
         <tr>
             @if($person->fullname)
@@ -358,31 +368,31 @@
                 @endif
             </tr>
             <tr>
-                @if($person->child3_name)
-                    <td colspan="2">2.<label><?php echo $person->child3_name ?> </label></td>
+                @if($person->child2_name)
+                    <td colspan="2">2.<label><?php echo $person->child2_name ?> </label></td>
                 @else
                     <td colspan="2">2.<label> - </label></td>
                 @endif
-                @if($person->child3_age)
-                    <td colspan="1">อายุ :<label><?php echo $person->child3_age ?></label> ปี</td>
+                @if($person->child2_age)
+                    <td colspan="1">อายุ :<label><?php echo $person->child2_age ?></label> ปี</td>
                 @else
                     <td colspan="1">อายุ:<label> - </label> ปี</td>
                 @endif
-                @if($person->child3_job)
-                    <td colspan="1">อาชีพ:<label><?php echo $person->child3_job ?></label></td>
+                @if($person->child2_job)
+                    <td colspan="1">อาชีพ:<label><?php echo $person->child2_job ?></label></td>
                 @else
                     <td colspan="1">อาชีพ:<label> - </label></td>
                 @endif
             </tr>
 
             <tr>
-                @if($person->child3_workplace)
-                    <td colspan="4">ที่ทำงาน : <label><?php echo $person->child3_workplace ?></label></td>
+                @if($person->child2_workplace)
+                    <td colspan="4">ที่ทำงาน : <label><?php echo $person->child2_workplace ?></label></td>
                 @else
                     <td colspan="4">ที่ทำงาน: <label> - </label></td>
                 @endif
-                @if($person->child3_tel)
-                    <td colspan="1">โทร : <label><?php echo $person->child3_tel ?></label></td>
+                @if($person->child2_tel)
+                    <td colspan="1">โทร : <label><?php echo $person->child2_tel ?></label></td>
                 @else
                     <td colspan="1">โทร: <label> - </label></td>
                 @endif

@@ -10,7 +10,7 @@ class Person extends Model
     use SoftDeletes;
     protected $table = "persons";
 
-    protected $fillable = ["type_person","fullname","identity","pic_path","user_id",
+    protected $fillable = ["type_person","fullname","identity","pic_path","user_deleted",
         'type_identity','age','job','workplace1','workplace1_tel','workplace2',
         'workplace2_tel','current_address','current_address_tel','origin_address',
         'origin_address_tel','father_name','father_age','father_status','father_address',
@@ -29,14 +29,19 @@ class Person extends Model
     'family_member3_job','family_member3_workplace','family_member3_workplace_tel',
     'family_member3_address','employee1_name','employee1_age','employee1_identity',
     'employee1_address','employee2_name','employee2_age','employee2_identity',
-    'employee2_address','others'
+    'employee2_address','others','user_created'
 
    ];
 
 
     public function deleted_by()
     {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(User::class, 'user_deleted', 'id');
+    }
+
+    public function created_by()
+    {
+        return $this->belongsTo(User::class, 'user_created', 'id');
     }
 
 }

@@ -1154,6 +1154,7 @@
                                     </div>
                                     <div class="col-md-6">
                                     <button type="submit" class="btn btn-primary ">ตกลง</button>
+
                                     <a href="/person" class="btn btn-default ">ยกเลิก</a>
                                     </div>
 

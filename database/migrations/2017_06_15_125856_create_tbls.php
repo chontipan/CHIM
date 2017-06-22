@@ -19,11 +19,15 @@ class CreateTbls extends Migration
             $table->string('fullname');
             $table->string('identity')->nullable();
             $table->string('pic_path')->nullable();
-            $table->integer('user_id')->nullable()->unsigned();
+            $table->integer('user_deleted')->nullable()->unsigned();
+            $table->integer('user_created')->nullable()->unsigned();
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')
+            $table->foreign('user_deleted')->references('id')->on('users')
+                ->onUpdate('cascade')->onDelete('set null');
+
+            $table->foreign('user_created')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('set null');
 
         });

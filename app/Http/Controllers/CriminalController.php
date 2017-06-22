@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Person;
+use App\Criminal;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Matriphe\Imageupload\Imageupload;
 use Matriphe\Imageupload\ImageuploadFacade;
 use Illuminate\Http\UploadedFile;
 
-class PersonController extends Controller
+class CriminalController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -35,29 +35,29 @@ class PersonController extends Controller
 
             $keyword = $request->get('keyword');
 
-            $persons = DB::table('persons')
+            $criminals = DB::table('criminals')
                 ->Where('identity', 'like', "%$keyword%")
                 ->orWhere('fullname', 'like', "%$keyword%")
                 ->orderBy('created_at', 'desc')
                 ->paginate(20);
             //return $persons;
 
-            return view('user.person.index')
-                ->with('persons', $persons);
+            return view('user.criminal.index')
+                ->with('criminals', $criminals);
         }else {
 
-            $persons = Person::orderBy('created_at', 'desc')
+            $criminals = Criminal::orderBy('created_at', 'desc')
                 ->paginate(20);
             //return $persons;
-            return view('user.person.index')
-                ->with('persons', $persons);
+            return view('user.criminal.index')
+                ->with('criminals', $criminals);
         }
 
     }
 
     public function create(Request $request)
     {
-        return view('user.person.create');
+        return view('user.criminal.create');
     }
 
     public function postCreate(Request $request)
@@ -70,28 +70,28 @@ class PersonController extends Controller
             $file_path = $size400['filedir'];
         }
 
-        $form = $request->get('person');
-        $newPerson = new Person();
+        $form = $request->get('criminal');
+        $newCriminal = new Criminal();
 
-        $newPerson->fill($form);
+        $newCriminal->fill($form);
 
         if($request->hasFile('pic_path')){
-            $newPerson->pic_path = $file_path;
+            $newCriminal->pic_path = $file_path;
         }
+
         $currentUser = Auth::id();
 
-        $newPerson->created_by()->associate($currentUser);
-
-        $newPerson->save();
-        return redirect('/person');
+        $newCriminal->created_by()->associate($currentUser);
+        $newCriminal->save();
+        return redirect('/criminal');
     }
     public function postDelete(Request $request, $id)
     {
         $currentUser = Auth::id();
-        $personDelete = Person::where('id', $id)->first();
-        $personDelete->deleted_by()->associate($currentUser);
-        $personDelete->save();
-        $personDelete->delete();
-        return redirect('/person');
+        $criminalDelete = Criminal::where('id', $id)->first();
+        $criminalDelete->deleted_by()->associate($currentUser);
+        $criminalDelete->save();
+        $criminalDelete->delete();
+        return redirect('/criminal');
     }
 }
