@@ -12,7 +12,7 @@
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="panel panel-default">
+                    <div class="panel panel-danger">
                         <div class="panel-heading">บุคคลที่เกี่ยวข้องกับอาชญากรรม</div>
 
                         <div class="panel-body">
@@ -21,7 +21,7 @@
                             <form class="form-horizontal" method="get" action="/criminal">
                                 <div class="input-group input-group-sm" style="width: 300px;">
                                     <input type="text" name="keyword" class="form-control pull-right"
-                                           placeholder="กรอกหมายเลขบัตร หรือ ชื่อ ชื่อสกุล">
+                                           placeholder="กรอกหมายเลขบัตร หรือ ชื่อ ชื่อสกุล" value={{$keyword}}>
 
                                     <div class="input-group-btn">
                                         <button type="submit" class="btn btn-default"><i class="fa fa-search">Search</i>
@@ -74,7 +74,7 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    จำนวนบุคคลทั่วไป {{ $criminals->count() }} คน
+                                    จำนวนบุคคลที่เกี่ยวข้องกับอาชญากรรม {{ $criminals->count() }} คน
                                 </div>
                             </div>
                             <div class="row">
@@ -102,7 +102,7 @@
 @section('javascript')
     <script type="text/javascript">
         function deletecriminal(id) {
-            if(confirm("คุณต้องการเป็นผู้้ลบประวัติบุคคลทั่วไปนี้?")){
+            if(confirm("คุณต้องการเป็นผู้้ลบประวัติบุคคลนี้?")){
                 var form = document.getElementById('deletecriminal');
                 form.setAttribute('action',"/criminal/"+id+"/delete")
                 form.submit()

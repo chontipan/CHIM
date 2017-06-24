@@ -12,7 +12,6 @@
 
     <!-- Styles -->
 
-
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
@@ -77,10 +76,14 @@
             @yield('content')
         </div>
 
-    </div>
 
+    </div>
+    <footer>
+        <p align="center">CHIM (Criminal History Information System) 2017</p>
+    </footer>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 @yield("javascript")
 </body>
+
 </html>

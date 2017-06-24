@@ -43,14 +43,16 @@ class PersonController extends Controller
             //return $persons;
 
             return view('user.person.index')
-                ->with('persons', $persons);
+                ->with('persons', $persons)
+                ->with('keyword', $keyword);
         }else {
 
             $persons = Person::orderBy('created_at', 'desc')
                 ->paginate(20);
             //return $persons;
             return view('user.person.index')
-                ->with('persons', $persons);
+                ->with('persons', $persons)
+                ->with('keyword', $keyword);
         }
 
     }

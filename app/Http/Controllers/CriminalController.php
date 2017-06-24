@@ -43,6 +43,7 @@ class CriminalController extends Controller
             //return $persons;
 
             return view('user.criminal.index')
+                ->with('keyword', $keyword)
                 ->with('criminals', $criminals);
         }else {
 
@@ -50,7 +51,8 @@ class CriminalController extends Controller
                 ->paginate(20);
             //return $persons;
             return view('user.criminal.index')
-                ->with('criminals', $criminals);
+                ->with('criminals', $criminals)
+                ->with('keyword', $keyword);
         }
 
     }

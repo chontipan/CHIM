@@ -29,6 +29,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/person', "PersonController@index");
 
+Route::get('/search', "SearchController@index");
+Route::post('/person/{id}/delete/{keyword}', "SearchController@personDelete");
+Route::post('/criminal/{id}/delete/{keyword}', "SearchController@criminalDelete");
 
 
 Route::get('/person/create', "PersonController@create");
