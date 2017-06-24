@@ -35,8 +35,7 @@ class CriminalController extends Controller
 
             $keyword = $request->get('keyword');
 
-            $criminals = DB::table('criminals')
-                ->Where('identity', 'like', "%$keyword%")
+            $criminals = Criminal::Where('identity', 'like', "%$keyword%")
                 ->orWhere('fullname', 'like', "%$keyword%")
                 ->orderBy('created_at', 'desc')
                 ->paginate(20);

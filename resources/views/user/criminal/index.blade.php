@@ -10,7 +10,7 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="row">
+            <div class="row" style="padding-top: 1em">
                 <div class="col-md-12">
                     <div class="panel panel-danger">
                         <div class="panel-heading">บุคคลที่เกี่ยวข้องกับอาชญากรรม</div>
@@ -24,7 +24,7 @@
                                            placeholder="กรอกหมายเลขบัตร หรือ ชื่อ ชื่อสกุล" value={{$keyword}}>
 
                                     <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-search">Search</i>
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"> ค้นหา</i>
                                         </button>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
 @section('javascript')
     <script type="text/javascript">
         function deletecriminal(id) {
-            if(confirm("คุณต้องการเป็นผู้้ลบประวัติบุคคลนี้?")){
+            if(confirm("คุณต้องการเป็นผู้ลบประวัติบุคคลนี้?")){
                 var form = document.getElementById('deletecriminal');
                 form.setAttribute('action',"/criminal/"+id+"/delete")
                 form.submit()

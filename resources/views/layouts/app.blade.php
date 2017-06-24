@@ -9,9 +9,33 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'CHIM') }}</title>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyB1tI29Od4wKgtIrTGWkMd9FLY_8mMXahI"></script>
 
+
+    <script src="{{ asset('js/gmaps.js') }}"></script>
     <!-- Styles -->
+<style>
+    #mymap {
 
+        width: 1200px;
+        height: 500px;
+        padding-top: 1em;
+    }
+    #footer{
+        padding-top: 1em;
+        position:fixed;
+        height:50px;
+        background-color:white;
+        bottom:0px;
+        left:0px;
+        right:0px;
+        margin-bottom:0px;
+    }
+    body{
+        padding-bottom: 50px;
+        margin-bottom:50px;
+    }
+</style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
@@ -78,9 +102,9 @@
 
 
     </div>
-    <footer>
+    <div id="footer">
         <p align="center">CHIM (Criminal History Information System) 2017</p>
-    </footer>
+    </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 @yield("javascript")

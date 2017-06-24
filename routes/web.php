@@ -26,20 +26,28 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
-Route::get('/person', "PersonController@index");
-
 Route::get('/search', "SearchController@index");
 Route::post('/person/{id}/delete/{keyword}', "SearchController@personDelete");
 Route::post('/criminal/{id}/delete/{keyword}', "SearchController@criminalDelete");
+Route::post('/geenral_place/{id}/delete/{keyword}', "SearchController@generalPlaceDelete");
 
 
+Route::get('/person', "PersonController@index");
 Route::get('/person/create', "PersonController@create");
 Route::post('/person/create', "PersonController@postCreate");
 Route::post('/person/{id}/delete', "PersonController@postDelete");
 
 Route::get('/person/pdf/{id}', "PDFController@pdfPerson");
 Route::get('/person/pdf_announce/{id}', "PDFController@pdfPersonAnnounce");
+
+
+Route::get('/general_place', "GeneralPlaceController@index");
+Route::get('/general_place/create', "GeneralPlaceController@create");
+Route::post('/general_place/create', "GeneralPlaceController@postCreate");
+Route::post('/general_place/{id}/delete', "GeneralPlaceController@postDelete");
+Route::get('/general_place/pdf/{id}', "PDFController@pdfPerson");
+Route::get('/general_place/pdf_announce/{id}', "PDFController@pdfPersonAnnounce");
+Route::get('/general_place/map', 'GeneralPlaceController@map');
 
 
 Route::get('/criminal', "CriminalController@index");
@@ -49,4 +57,12 @@ Route::post('/criminal/{id}/delete', "CriminalController@postDelete");
 
 Route::get('/criminal/pdf/{id}', "PDFController@pdfCriminal");
 Route::get('/criminal/pdf_announce/{id}', "PDFController@pdfCriminalAnnounce");
+
+
+
+Route::get('/search_fulltext', function (Request $request) {
+   // return App\Person::search($request->search)->get();
+
+    return \App\Person::search('polcie')->get();
+});
 

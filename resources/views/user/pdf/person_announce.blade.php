@@ -40,7 +40,7 @@
 </htmlpagefooter>
 
 <div class="row" style="text-align: center">
-    <h3>ประวัติบุคคลทั่วไป</h3>
+    <h3>รูปถ่ายบุคคลทั่วไป</h3>
 
 </div>
 <div class="row" style="text-align: center">

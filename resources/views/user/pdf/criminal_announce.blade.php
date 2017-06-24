@@ -40,7 +40,7 @@
 </htmlpagefooter>
 
 <div class="row" style="text-align: center">
-    <h3>บุคคลที่เกี่ยวข้องกับอาชญากรรม</h3>
+    <h3>รูปถ่ายบุคคลที่เกี่ยวข้องกับอาชญากรรม</h3>
 
 </div>
 <div class="row" style="text-align: center">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PlaceGeneral;
 use Illuminate\Http\Request;
 use App\Person;
 use App\Criminal;
@@ -32,24 +33,31 @@ class SearchController extends Controller
        // if ($keyword) {
             $keyword = $request->get('keyword');
 
-            $persons = DB::table('persons')
-                ->Where('identity', 'like', "%$keyword%")
+            $persons = Person::Where('identity', 'like', "%$keyword%")
                 ->orWhere('fullname', 'like', "%$keyword%")
-                ->whereNull('user_deleted')
                 ->orderBy('created_at', 'desc')
                 ->paginate(20);
 
 
-            $criminals = DB::table('criminals')
-                ->Where('identity', 'like', "%$keyword%")
+            $criminals = Criminal::Where('identity', 'like', "%$keyword%")
                 ->orWhere('fullname', 'like', "%$keyword%")
-                ->whereNull('user_deleted')
                 ->orderBy('created_at', 'desc')
                 ->paginate(20);
+
+
+        $places = PlaceGeneral::Where('name', 'like', "%$keyword%")
+            ->orWhere('owner_name', 'like', "%$keyword%")
+            ->orWhere('manager_name', 'like', "%$keyword%")
+            ->orWhere('owner_identity', 'like', "%$keyword%")
+            ->orWhere('manager_identity', 'like', "%$keyword%")
+            ->orderBy('created_at', 'desc')
+            ->paginate(20);
+
 
             return view('user.search')
                 ->with('persons', $persons)
                 ->with('criminals', $criminals)
+                ->with('places', $places)
                 ->with('keyword', $keyword);
        // }
 
@@ -74,6 +82,16 @@ class SearchController extends Controller
         $criminalDelete->deleted_by()->associate($currentUser);
         $criminalDelete->save();
         $criminalDelete->delete();
+        return redirect("/search?keyword=$keyword");
+    }
+
+    public function generalPlaceDelete(Request $request, $id, $keyword)
+    {
+        $currentUser = Auth::id();
+        $placeDelete = PlaceGeneral::where('id', $id)->first();
+        $placeDelete->deleted_by()->associate($currentUser);
+        $placeDelete->save();
+        $placeDelete->delete();
         return redirect("/search?keyword=$keyword");
     }
 

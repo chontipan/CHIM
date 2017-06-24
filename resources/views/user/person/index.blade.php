@@ -10,9 +10,9 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="row">
+            <div class="row" style="padding-top: 1em">
                 <div class="col-md-12">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">บุคคลทั่วไป</div>
 
                         <div class="panel-body">
@@ -24,7 +24,7 @@
                                        placeholder="กรอกหมายเลขบัตร หรือ ชื่อ ชื่อสกุล" value={{$keyword}}>
 
                                 <div class="input-group-btn">
-                                    <button type="submit" class="btn btn-default"><i class="fa fa-search">Search</i>
+                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"> ค้นหา</i>
                                     </button>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@
 @section('javascript')
     <script type="text/javascript">
       function deletePerson(id) {
-          if(confirm("คุณต้องการเป็นผู้้ลบประวัติบุคคลนี้?")){
+          if(confirm("คุณต้องการเป็นผู้ลบประวัติบุคคลนี้?")){
               var form = document.getElementById('deletePerson');
               form.setAttribute('action',"/person/"+id+"/delete")
               form.submit()

@@ -180,6 +180,7 @@ return [
     //Barryvdh\DomPDF\ServiceProvider::class,
         niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
         Matriphe\Imageupload\ImageuploadServiceProvider::class,
+
     ],
 
     /*

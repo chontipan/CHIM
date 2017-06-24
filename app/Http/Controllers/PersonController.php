@@ -35,8 +35,7 @@ class PersonController extends Controller
 
             $keyword = $request->get('keyword');
 
-            $persons = DB::table('persons')
-                ->Where('identity', 'like', "%$keyword%")
+            $persons = Person::Where('identity', 'like', "%$keyword%")
                 ->orWhere('fullname', 'like', "%$keyword%")
                 ->orderBy('created_at', 'desc')
                 ->paginate(20);
