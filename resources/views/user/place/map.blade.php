@@ -10,7 +10,7 @@
 
         <!-- Main content -->
         <section class="content">
-            <div id="mymap"></div>
+            <div style="padding-top: 2em" id="mymap"></div>
         </section>
         <!-- /.content -->
 

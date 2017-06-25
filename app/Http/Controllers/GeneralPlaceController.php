@@ -79,7 +79,10 @@ class GeneralPlaceController extends Controller
         $newPlace->created_by()->associate($currentUser);
 
         $newPlace->save();
-        return redirect('/general_place');
+
+        $lastInsertedId = $newPlace->id;
+
+        return redirect("/general_place/$lastInsertedId/map");
     }
     public function postDelete(Request $request, $id)
     {
@@ -96,4 +99,12 @@ class GeneralPlaceController extends Controller
         $locations = PlaceGeneral::all();
         return view('user.place.map', compact('locations'));
     }
+
+    public function addMap(Request $request, $id)
+    {
+        $place = PlaceGeneral::where('id', $id)->first();
+        return view('user.place.addmap')
+            ->with('place', $place);
+    }
+
 }

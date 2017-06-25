@@ -61,8 +61,7 @@
                                         <td>{{$place->manager_name}}</td>
 
                                         <td>
-                                            <a href="/general_place/pdf_announce/{{$place->id}}"  target="_blank" class="btn btn-primary">Short-Pdf</a>
-                                            <a href="/general_place/pdf/{{$place->id}}"  target="_blank" class="btn btn-success">Full-Pdf</a>
+                                            <a href="/general_place/pdf/{{$place->id}}"  target="_blank" class="btn btn-success">Pdf</a>
 
                                             <button onclick="deletePlace({{$place->id}})" type="button"
                                                     class="btn btn-danger">ลบ

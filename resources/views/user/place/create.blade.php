@@ -4,6 +4,7 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
+            <a href="/home">หน้าหลัก</a>/แบบประวัติสถานที่ทั่วไป
             <h1>
                 แบบประวัติสถานที่ทั่วไป
             </h1>

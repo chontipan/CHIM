@@ -132,24 +132,30 @@ class PDFController extends Controller
     public function pdfGeneralPlace($id)
     {
         $place = PlaceGeneral::where('id', $id)->first();
-
-
         $t=time();
         $place->time = date("Y-m-d-h:i:s",$t);
-
-
 
         // $pdf = app('dompdf.wrapper');
         // $pdf->loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
         //return $pdf->stream();
 
+
+
+      //  return view('user.pdf.general_place')
+      //      ->with('place',$place);
+
         $pdf = Pdf::loadView('user.pdf.general_place', ["place"=>$place,"public_path"=>public_path()]);
 
-        return view('user.pdf.general_place');
-        return $pdf->stream('document.pdf');
+        return $pdf->stream('');
 
 
-
+        //$html = view('user.pdf.general_place')->with('place',$place)->render();
+       //  return $html;
+        //$pdf= new \mPDF();
+       // $pdf->writeHTML($html);
+     //   return $pdf;
+       // $pdf->stream();
+        //$pdf->Output();
     }
 
 
