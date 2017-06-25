@@ -46,7 +46,7 @@ class PDFController extends Controller
         $pdf = Pdf::loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
 
 
-        return $pdf->stream('document.pdf');
+        return $pdf->stream();
 
 
 
@@ -70,7 +70,7 @@ class PDFController extends Controller
         $pdf = Pdf::loadView('user.pdf.person_announce', ["person"=>$person,"public_path"=>public_path()]);
 
 
-        return $pdf->stream('document.pdf');
+        return $pdf->stream();
 
 
 
@@ -100,7 +100,7 @@ class PDFController extends Controller
         $pdf = Pdf::loadView('user.pdf.criminal', ["criminal"=>$criminal,"public_path"=>public_path()]);
 
 
-        return $pdf->stream('document.pdf');
+        return $pdf->stream();
 
 
 
@@ -123,13 +123,34 @@ class PDFController extends Controller
         $pdf = Pdf::loadView('user.pdf.criminal_announce', ["criminal"=>$criminal,"public_path"=>public_path()]);
 
 
-        return $pdf->stream('document.pdf');
+        return $pdf->stream();
 
 
 
     }
 
     public function pdfGeneralPlace($id)
+    {
+        $place = PlaceGeneral::where('id', $id)->first();
+
+
+        $t=time();
+        $place->time = date("Y-m-d-h:i:s",$t);
+
+
+
+        // $pdf = app('dompdf.wrapper');
+        // $pdf->loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
+        //return $pdf->stream();
+
+        $pdf = Pdf::loadView('user.pdf.general_place', ["place"=>$place]);
+
+
+        return $pdf->stream();
+
+    }
+
+    public function pdfGeneralPlaceAnnounce($id)
     {
         $place = PlaceGeneral::where('id', $id)->first();
         $t=time();
@@ -139,14 +160,12 @@ class PDFController extends Controller
         // $pdf->loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
         //return $pdf->stream();
 
-
-
       //  return view('user.pdf.general_place')
       //      ->with('place',$place);
 
-        $pdf = Pdf::loadView('user.pdf.general_place', ["place"=>$place,"public_path"=>public_path()]);
+        $pdf = Pdf::loadView('user.pdf.general_place_announce', ["place"=>$place]);
 
-        return $pdf->stream('');
+        return $pdf->stream();
 
 
         //$html = view('user.pdf.general_place')->with('place',$place)->render();

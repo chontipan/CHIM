@@ -2,14 +2,13 @@
 
 namespace App;
 
-use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 class Person extends Model
 {
-    use Searchable;
+
     use SoftDeletes;
     protected $table = "persons";
 
@@ -45,14 +44,6 @@ class Person extends Model
     public function created_by()
     {
         return $this->belongsTo(User::class, 'user_created', 'id');
-    }
-    public function toSearchableArray()
-    {
-        $array = $this->toArray();
-
-        // Customize array...
-
-        return $array;
     }
 
 }

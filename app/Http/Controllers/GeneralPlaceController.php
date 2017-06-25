@@ -54,9 +54,12 @@ class GeneralPlaceController extends Controller
 
             $places = PlaceGeneral::orderBy('created_at', 'desc')
                 ->paginate(20);
+
+            $all = PlaceGeneral::count();
             //return $persons;
             return view('user.place.index')
                 ->with('places', $places)
+                ->with('all', $all)
                 ->with('keyword', $keyword);
         }
 
@@ -106,5 +109,23 @@ class GeneralPlaceController extends Controller
         return view('user.place.addmap')
             ->with('place', $place);
     }
+    public function postAddMap(Request $request, $id)
+    {
+        $lat = $request->get('lat');
+        $lng = $request->get('lng');
+
+        $placeMap = PlaceGeneral::where('id', $id)->first();
+        $placeMap->lat = $lat;
+        $placeMap->lng = $lng;
+        $placeMap->save();
+
+
+
+
+
+        return redirect('/general_place');
+    }
+
+
 
 }

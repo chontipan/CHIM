@@ -35,6 +35,12 @@
                                 เพิ่มประวัติบุคคลทั่วไป
                             </a>
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    จำนวนบุคคลทั่วไปทั้งหมด {{ $persons->total() }} คน
+                                </div>
+                            </div>
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
@@ -74,7 +80,7 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    จำนวนบุคคลทั่วไป {{ $persons->count() }} คน
+                                    จำนวนบุคคลทั่วไปในหน้านี้ {{ $persons->count() }} คน
                                 </div>
                             </div>
                             <div class="row">

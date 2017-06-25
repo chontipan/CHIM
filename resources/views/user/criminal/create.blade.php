@@ -35,11 +35,16 @@
                                 <div class="row">
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">1. ชื่อ-ชื่อสกุล</label>
-                                            <div class="col-sm-10">
+                                            <div class="col-sm-8">
                                                 <input required type="text"
+                                                       id="keyword_name"
                                                        name="criminal[fullname]"
                                                        value=""
                                                        class="form-control" placeholder="ชื่อ-ชื่อสกุล">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <a href="#" id="search_name" class="btn btn-default">ค้นหา</a>
+
                                             </div>
                                         </div>
                                 </div>
@@ -118,11 +123,17 @@
                                     <label style="text-align: left" class="col-sm-3 control-label">
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         หมายเลขบัตร</label>
-                                    <div class="col-sm-9">
+                                    <div class="col-sm-7">
                                         <input  type="text"
+                                                id="keyword_identity"
                                                name="criminal[identity]"
                                                value=""
                                                class="form-control" placeholder="หมายเลขบัตร">
+                                    </div>
+                                    <div class="col-sm-2">
+
+                                        <a href="#" id="search_identity" class="btn btn-default">ค้นหา</a>
+
                                     </div>
                                 </div>
 
@@ -1119,5 +1130,21 @@
 
 @section('javascript')
     <script type="text/javascript">
+            $(document).ready(function(){
+                $("#search_name").click(function(){
+                    var bla = $('#keyword_name').val();
+                    $('#keyword_name').val(bla);
+                    if(bla){
+                        window.open('/search?keyword=' + bla, '_blank');
+                    }
+                });
+                $("#search_identity").click(function(){
+                    var bla = $('#keyword_identity').val();
+                    $('#keyword_identity').val(bla);
+                    if(bla){
+                        window.open('/search?keyword=' + bla, '_blank');
+                    }
+                });
+            });
     </script>
 @endsection

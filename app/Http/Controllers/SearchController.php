@@ -33,10 +33,11 @@ class SearchController extends Controller
        // if ($keyword) {
             $keyword = $request->get('keyword');
 
-            $persons = Person::Where('identity', 'like', "%$keyword%")
-                ->orWhere('fullname', 'like', "%$keyword%")
-                ->orderBy('created_at', 'desc')
-                ->paginate(20);
+
+        $persons = Person::Where('identity', 'like', "%$keyword%")
+            ->orWhere('fullname', 'like', "%$keyword%")
+            ->orderBy('created_at', 'desc')
+            ->paginate(20);
 
 
             $criminals = Criminal::Where('identity', 'like', "%$keyword%")
@@ -54,16 +55,21 @@ class SearchController extends Controller
             ->paginate(20);
 
 
+      
+
+
             return view('user.search')
                 ->with('persons', $persons)
                 ->with('criminals', $criminals)
                 ->with('places', $places)
-                ->with('keyword', $keyword);
+                ->with('keyword', $keyword)
+                //->with('person_count', $person_count)
+               // ->with('criminal_count', $criminal_count)
+               // ->with('place_count', $place_count)
+                ;
        // }
 
     }
-
-
 
     public function personDelete(Request $request, $id, $keyword)
     {
@@ -94,6 +100,7 @@ class SearchController extends Controller
         $placeDelete->delete();
         return redirect("/search?keyword=$keyword");
     }
+
 
 
 }

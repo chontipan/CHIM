@@ -9,15 +9,20 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'CHIM') }}</title>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyB1tI29Od4wKgtIrTGWkMd9FLY_8mMXahI"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyB1tI29Od4wKgtIrTGWkMd9FLY_8mMXahI&libraries=places"></script>
 
 
     <script src="{{ asset('js/gmaps.js') }}"></script>
     <!-- Styles -->
 <style>
+    #map {
+        width: 800px;
+        height: 500px;
+        padding-top: 1em;
+    }
     #mymap {
 
-        width: 1200px;
+        width: 800px;
         height: 500px;
         padding-top: 1em;
     }

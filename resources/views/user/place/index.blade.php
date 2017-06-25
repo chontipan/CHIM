@@ -35,6 +35,11 @@
                                 เพิ่มประวัติสถานที่ทั่วไป
                             </a>
                             </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    จำนวนสถานที่ทั่วไปทั้งหมด {{ $places->total() }} สถานที่
+                                </div>
+                            </div>
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
@@ -61,8 +66,8 @@
                                         <td>{{$place->manager_name}}</td>
 
                                         <td>
-                                            <a href="/general_place/pdf/{{$place->id}}"  target="_blank" class="btn btn-success">Pdf</a>
-
+                                            <a href="/general_place/pdf_announce/{{$place->id}}"  target="_blank" class="btn btn-primary">Short-Pdf</a>
+                                            <a href="/general_place/pdf/{{$place->id}}"  target="_blank" class="btn btn-success">Full-Pdf</a>
                                             <button onclick="deletePlace({{$place->id}})" type="button"
                                                     class="btn btn-danger">ลบ
                                             </button>
@@ -79,7 +84,7 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    จำนวนสถานที่ทั่วไป {{ $places->count() }} สถานที่
+                                    จำนวนสถานที่ทั่วไปในหน้านี้ {{ $places->count() }} สถานที่
                                 </div>
                             </div>
                             <div class="row">

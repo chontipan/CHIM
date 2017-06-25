@@ -48,10 +48,14 @@ class PersonController extends Controller
 
             $persons = Person::orderBy('created_at', 'desc')
                 ->paginate(20);
+            $all = Person::count();
+
+           // return $all;
             //return $persons;
             return view('user.person.index')
                 ->with('persons', $persons)
-                ->with('keyword', $keyword);
+                ->with('keyword', $keyword)
+                ->with('all', $all);
         }
 
     }
@@ -84,6 +88,17 @@ class PersonController extends Controller
         $newPerson->created_by()->associate($currentUser);
 
         $newPerson->save();
+
+     /*   if($newPerson->identity){
+            return redirect("/afterSave/$newPerson->fullname/$newPerson->identity");
+
+        }else{
+
+            return redirect("/afterSave/$newPerson->fullname");
+        }
+
+*/
+
         return redirect('/person');
     }
     public function postDelete(Request $request, $id)

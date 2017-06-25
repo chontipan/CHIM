@@ -44,7 +44,8 @@
                                                        class="form-control" placeholder="ชื่อ-ชื่อสกุล">
                                             </div>
                                             <div class="col-sm-2">
-                                                <button src="#" id="search_name">ค้นหา</button>
+                                                <a href="#" id="search_name" class="btn btn-default">ค้นหา</a>
+
                                             </div>
                                         </div>
 
@@ -101,7 +102,9 @@
                                     </div>
 
                                     <div class="col-sm-2">
-                                        <button src="#" id="search_identity">ค้นหา</button>
+
+                                        <a href="#" id="search_identity" class="btn btn-default">ค้นหา</a>
+
                                     </div>
                                 </div>
 
@@ -1165,7 +1168,7 @@
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary ">ตกลง</button>
+                                    <button type="submit" class="btn btn-primary ">บันทึก</button>
 
                                     <a href="/person" class="btn btn-default ">ยกเลิก</a>
                                     </div>
@@ -1187,22 +1190,41 @@
 
 @section('javascript')
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#search_name').click(function (e) {
-
-                //Get
+        $(document).ready(function(){
+            $("#search_name").click(function(){
                 var bla = $('#keyword_name').val();
-
-                //Set
                 $('#keyword_name').val(bla);
-
-               if(bla){
-                   window.open('/search?keyword=' + bla, '_blank');
-               }
-
-
-
+                if(bla){
+                    window.open('/search?keyword=' + bla, '_blank');
+                }
             });
+            $("#search_identity").click(function(){
+                var bla = $('#keyword_identity').val();
+                $('#keyword_identity').val(bla);
+                if(bla){
+                    window.open('/search?keyword=' + bla, '_blank');
+                }
+            });
+        });
+
+        //$(document).ready(function () {
+         /*   $(document).ready(function() {
+                $("#search_name a").click(function() {
+                    //Do stuff when clicked
+                    var bla = $('#keyword_name').val();
+
+                    //Set
+                    $('#keyword_name').val(bla);
+
+                    if(bla){
+                        window.open('/search?keyword=' + bla, '_blank');
+                    }
+
+                });
+            });
+
+
+
 
             $('#search_identity').click(function (e) {
 
@@ -1220,8 +1242,8 @@
 
             });
 
+*/
 
-
-        });
+        //});
     </script>
 @endsection

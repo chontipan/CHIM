@@ -27,10 +27,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/search', "SearchController@index");
-Route::post('/person/{id}/delete/{keyword}', "SearchController@personDelete");
-Route::post('/criminal/{id}/delete/{keyword}', "SearchController@criminalDelete");
-Route::post('/geenral_place/{id}/delete/{keyword}', "SearchController@generalPlaceDelete");
+//Route::post('/person/{id}/delete/{keyword}', "SearchController@personDelete");
+//Route::post('/criminal/{id}/delete/{keyword}', "SearchController@criminalDelete");
+//Route::post('/geenral_place/{id}/delete/{keyword}', "SearchController@generalPlaceDelete");
 
+//Route::get('/afterSave/{name}', "SearchController@afterSavePersonWithName");
+//Route::get('/afterSave/{name}/{identity}', "SearchController@afterSavePersonWithIdentity");
+//Route::get('/afterSave/{name}/{identity}', "SearchController@after");
 
 Route::get('/person', "PersonController@index");
 Route::get('/person/create', "PersonController@create");
@@ -46,8 +49,9 @@ Route::get('/general_place/create', "GeneralPlaceController@create");
 Route::post('/general_place/create', "GeneralPlaceController@postCreate");
 Route::post('/general_place/{id}/delete', "GeneralPlaceController@postDelete");
 Route::get('/general_place/{id}/map', "GeneralPlaceController@addMap");
+Route::post('/general_place/{id}/map/create', "GeneralPlaceController@postAddMap");
 Route::get('/general_place/pdf/{id}', "PDFController@pdfGeneralPlace");
-Route::get('/general_place/pdf_announce/{id}', "PDFController@pdfPersonAnnounce");
+Route::get('/general_place/pdf_announce/{id}', "PDFController@pdfGeneralPlaceAnnounce");
 Route::get('/general_place/map', 'GeneralPlaceController@map');
 
 
@@ -59,11 +63,4 @@ Route::post('/criminal/{id}/delete', "CriminalController@postDelete");
 Route::get('/criminal/pdf/{id}', "PDFController@pdfCriminal");
 Route::get('/criminal/pdf_announce/{id}', "PDFController@pdfCriminalAnnounce");
 
-
-
-Route::get('/search_fulltext', function (Request $request) {
-   // return App\Person::search($request->search)->get();
-
-    return \App\Person::search('polcie')->get();
-});
 

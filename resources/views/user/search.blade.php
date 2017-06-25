@@ -22,7 +22,7 @@
                                            placeholder="กรอกชื่อ หมายเลขบัตร ชื่อสถานที่ อำเภอที่ตั้ง จังหวัดที่ตั้ง" value={{$keyword}}>
 
                                     <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-search">Search</i>
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"> ค้นหา</i>
                                         </button>
                                     </div>
                                 </div>
@@ -40,7 +40,11 @@
                         <div class="panel-body">
                         <!-- /.box-header -->
 
-
+                            <div class="row">
+                                <div class="col-md-12">
+                                    จำนวนบุคคลทั่วไปทั้งหมด {{ $persons->total() }} คน
+                                </div>
+                            </div>
 
 
                             <table class="table table-striped">
@@ -80,12 +84,12 @@
                             <form id="deletePerson" method="post">
                                 {{csrf_field()}}
                             </form>
-
                             <div class="row">
                                 <div class="col-md-12">
-                                    จำนวนบุคคลทั่วไป {{ $persons->count() }} คน
+                                    จำนวนบุคคลทั่วไปในหน้านี้ {{ $persons->count() }} คน
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-12">
                                     {{ $persons->links() }}
@@ -108,7 +112,11 @@
 
                         <div class="panel-body">
                             <!-- /.box-header -->
-
+                            <div class="row">
+                                <div class="col-md-12">
+                                    จำนวนบุคคลที่เกี่ยวข้องกับอาชญากรรมทั้งหมด {{ $criminals->total() }} คน
+                                </div>
+                            </div>
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
@@ -148,7 +156,7 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    จำนวนบุคคลที่เกี่ยวข้องกับอาชญากรรม {{ $criminals->count() }} คน
+                                    จำนวนบุคคลที่เกี่ยวข้องกับอาชญากรรมในหน้านี้ {{ $criminals->count() }} คน
                                 </div>
                             </div>
                             <div class="row">
@@ -173,7 +181,11 @@
 
                         <div class="panel-body">
                             <!-- /.box-header -->
-
+                            <div class="row">
+                                <div class="col-md-12">
+                                    จำนวนสถานที่ทั่วไปทั้งหมด {{ $places->total() }} สถานที่
+                                </div>
+                            </div>
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
@@ -217,7 +229,7 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    จำนวนสถานที่ทั่วไป {{ $places->count() }} สถานที่
+                                    จำนวนสถานที่ทั่วไปในหน้านี้ {{ $places->count() }} สถานที่
                                 </div>
                             </div>
                             <div class="row">

@@ -49,8 +49,11 @@ class CriminalController extends Controller
             $criminals = Criminal::orderBy('created_at', 'desc')
                 ->paginate(20);
             //return $persons;
+
+            $all=Criminal::count();
             return view('user.criminal.index')
                 ->with('criminals', $criminals)
+                ->with('all', $all)
                 ->with('keyword', $keyword);
         }
 
@@ -85,6 +88,9 @@ class CriminalController extends Controller
         $newCriminal->created_by()->associate($currentUser);
         $newCriminal->save();
         return redirect('/criminal');
+
+
+
     }
     public function postDelete(Request $request, $id)
     {

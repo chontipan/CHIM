@@ -32,8 +32,13 @@
 
                             <div class="pull-right">
                                 <a href="/criminal/create" class="btn btn-primary">
-                                    เพิ่มประวัติบุคคลทั่วไป
+                                    เพิ่มประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม
                                 </a>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    จำนวนบุคคลที่เกี่ยวข้องกับอาชญากรรมทั้งหมด {{ $criminals->total() }} คน
+                                </div>
                             </div>
                             <table class="table table-striped">
                                 <thead>
@@ -74,7 +79,7 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    จำนวนบุคคลที่เกี่ยวข้องกับอาชญากรรม {{ $criminals->count() }} คน
+                                    จำนวนบุคคลที่เกี่ยวข้องกับอาชญากรรมในหน้านี้ {{ $criminals->count() }} คน
                                 </div>
                             </div>
                             <div class="row">

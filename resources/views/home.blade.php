@@ -12,11 +12,11 @@
                         <div class="col-lg-12 col-md-12">
                             <form class="form-horizontal" method="get" action="/search">
                                 <div class="input-group input-group-md" style="width: 600px;">
-                                    <input type="text" name="keyword" class="form-control pull-right"
+                                    <input required type="text" name="keyword" class="form-control pull-right"
                                            placeholder="กรอกชื่อ-ชื่อสกุล หมายเลขบัตร ชื่อสถานที่ อำเภอที่ตั้ง จังหวัดที่ตั้ง">
 
                                     <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"> ค้นหา</i>
+                                        <button  type="submit" class="btn btn-default"><i class="fa fa-search"> ค้นหา</i>
                                         </button>
                                     </div>
                                 </div>
