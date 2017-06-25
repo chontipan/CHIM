@@ -45,7 +45,7 @@ Route::get('/general_place', "GeneralPlaceController@index");
 Route::get('/general_place/create', "GeneralPlaceController@create");
 Route::post('/general_place/create', "GeneralPlaceController@postCreate");
 Route::post('/general_place/{id}/delete', "GeneralPlaceController@postDelete");
-Route::get('/general_place/pdf/{id}', "PDFController@pdfPerson");
+Route::get('/general_place/pdf/{id}', "PDFController@pdfGeneralPlace");
 Route::get('/general_place/pdf_announce/{id}', "PDFController@pdfPersonAnnounce");
 Route::get('/general_place/map', 'GeneralPlaceController@map');
 

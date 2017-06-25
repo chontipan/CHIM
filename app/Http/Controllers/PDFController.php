@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Criminal;
 use App\User;
+use App\PlaceGeneral;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -122,6 +123,29 @@ class PDFController extends Controller
         $pdf = Pdf::loadView('user.pdf.criminal_announce', ["criminal"=>$criminal,"public_path"=>public_path()]);
 
 
+        return $pdf->stream('document.pdf');
+
+
+
+    }
+
+    public function pdfGeneralPlace($id)
+    {
+        $place = PlaceGeneral::where('id', $id)->first();
+
+
+        $t=time();
+        $place->time = date("Y-m-d-h:i:s",$t);
+
+
+
+        // $pdf = app('dompdf.wrapper');
+        // $pdf->loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
+        //return $pdf->stream();
+
+        $pdf = Pdf::loadView('user.pdf.general_place', ["place"=>$place,"public_path"=>public_path()]);
+
+        return view('user.pdf.general_place');
         return $pdf->stream('document.pdf');
 
 
