@@ -55,6 +55,11 @@ Route::get('/general_place/pdf_announce/{id}', "PDFController@pdfGeneralPlaceAnn
 Route::get('/general_place/map', 'GeneralPlaceController@map');
 
 
+
+Route::get('/crime_place/create', "CrimePlaceController@create");
+Route::post('/crime_place/create', "CrimePlaceController@postCreate");
+
+
 Route::get('/criminal', "CriminalController@index");
 Route::get('/criminal/create', "CriminalController@create");
 Route::post('/criminal/create', "CriminalController@postCreate");

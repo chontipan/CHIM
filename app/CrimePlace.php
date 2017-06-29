@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class PlaceGeneral extends Model
+class CrimePlace extends Model
 {
     use SoftDeletes;
-    protected $table = "general_places";
+    protected $table = "crime_places";
 
     protected $fillable = [
 
@@ -18,7 +18,7 @@ class PlaceGeneral extends Model
         "manager_identity","manager_address_identity",
         "manager_address_tel","manager_current_address",
         "manager_current_address_tel","place_desc","place_event",
-        "place_note","user_deleted","user_created","lat","lng"
+        "place_note","user_deleted","user_created","place_crime_desc","lat","lng"
 
    ];
 
