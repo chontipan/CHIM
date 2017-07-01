@@ -25,11 +25,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/{id}/edit', "UserController@edit");
+Route::post('/{id}/edit', "UserController@postEdit");
 
 Route::get('/search', "SearchController@index");
-//Route::post('/person/{id}/delete/{keyword}', "SearchController@personDelete");
-//Route::post('/criminal/{id}/delete/{keyword}', "SearchController@criminalDelete");
-//Route::post('/geenral_place/{id}/delete/{keyword}', "SearchController@generalPlaceDelete");
+Route::post('/person/{id}/delete/{keyword}', "SearchController@personDelete");
+Route::post('/criminal/{id}/delete/{keyword}', "SearchController@criminalDelete");
+Route::post('/general_place/{id}/delete/{keyword}', "SearchController@generalPlaceDelete");
+Route::post('/crime_place/{id}/delete/{keyword}', "SearchController@generalCrimePlaceDelete");
 
 //Route::get('/afterSave/{name}', "SearchController@afterSavePersonWithName");
 //Route::get('/afterSave/{name}/{identity}', "SearchController@afterSavePersonWithIdentity");
@@ -55,9 +58,15 @@ Route::get('/general_place/pdf_announce/{id}', "PDFController@pdfGeneralPlaceAnn
 Route::get('/general_place/map', 'GeneralPlaceController@map');
 
 
-
+Route::get('/crime_place', "CrimePlaceController@index");
 Route::get('/crime_place/create', "CrimePlaceController@create");
 Route::post('/crime_place/create', "CrimePlaceController@postCreate");
+Route::get('/crime_place/map', 'CrimePlaceController@map');
+Route::post('/crime_place/{id}/delete', "CrimePlaceController@postDelete");
+Route::get('/crime_place/{id}/map', "CrimePlaceController@addMap");
+Route::post('/crime_place/{id}/map/create', "CrimePlaceController@postAddMap");
+Route::get('/crime_place/pdf/{id}', "PDFController@pdfCrimePlace");
+Route::get('/crime_place/pdf_announce/{id}', "PDFController@pdfCrimePlaceAnnounce");
 
 
 Route::get('/criminal', "CriminalController@index");

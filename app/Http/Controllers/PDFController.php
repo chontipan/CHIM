@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CrimePlace;
 use App\Criminal;
 use App\User;
 use App\PlaceGeneral;
@@ -34,19 +35,24 @@ class PDFController extends Controller
         $person = Person::where('id', $id)->first();
 
 
-        $t=time();
-        $person->time = date("Y-m-d-h:i:s",$t);
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized('-%H:%M:%S');
 
-
-
+        $person->time = "$daymonth$year$hour";
        // $pdf = app('dompdf.wrapper');
        // $pdf->loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
         //return $pdf->stream();
 
         $pdf = Pdf::loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
 
+        $file_name= "$person->fullname-$person->time";
 
-        return $pdf->stream();
+        return $pdf->stream("$file_name.pdf");
 
 
 
@@ -58,8 +64,18 @@ class PDFController extends Controller
         $person = Person::where('id', $id)->first();
 
 
-        $t=time();
-        $person->time = date("Y-m-d-h:i:s",$t);
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized('-%H:%M:%S');
+
+
+        // $t=time();
+        //$place->time = date("d/m/Y",$t);
+        $person->time = "$daymonth$year$hour";
 
 
 
@@ -70,7 +86,8 @@ class PDFController extends Controller
         $pdf = Pdf::loadView('user.pdf.person_announce', ["person"=>$person,"public_path"=>public_path()]);
 
 
-        return $pdf->stream();
+        $file_name= "$person->fullname-$person->time";
+        return $pdf->stream("$file_name.pdf");
 
 
 
@@ -81,8 +98,18 @@ class PDFController extends Controller
         $criminal = Criminal::where('id', $id)->first();
 
 
-        $t=time();
-        $criminal->time = date("Y-m-d-h:i:s",$t);
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized('-%H:%M:%S');
+
+
+        // $t=time();
+        //$place->time = date("d/m/Y",$t);
+        $criminal->time = "$daymonth$year$hour";
 
        // return $criminal->created_at;
 
@@ -98,9 +125,9 @@ class PDFController extends Controller
         //return $pdf->stream();
 
         $pdf = Pdf::loadView('user.pdf.criminal', ["criminal"=>$criminal,"public_path"=>public_path()]);
+        $file_name= "$criminal->fullname-$criminal->time";
+        return $pdf->stream("$file_name.pdf");
 
-
-        return $pdf->stream();
 
 
 
@@ -111,8 +138,18 @@ class PDFController extends Controller
         $criminal = Criminal::where('id', $id)->first();
 
 
-        $t=time();
-        $criminal->time = date("Y-m-d-h:i:s",$t);
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized('-%H:%M:%S');
+
+
+        // $t=time();
+        //$place->time = date("d/m/Y",$t);
+        $criminal->time = "$daymonth$year$hour";
 
 
 
@@ -123,7 +160,8 @@ class PDFController extends Controller
         $pdf = Pdf::loadView('user.pdf.criminal_announce', ["criminal"=>$criminal,"public_path"=>public_path()]);
 
 
-        return $pdf->stream();
+        $file_name= "$criminal->fullname-$criminal->time";
+        return $pdf->stream("$file_name.pdf");
 
 
 
@@ -134,8 +172,18 @@ class PDFController extends Controller
         $place = PlaceGeneral::where('id', $id)->first();
 
 
-        $t=time();
-        $place->time = date("Y-m-d-h:i:s",$t);
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized('-%H:%M:%S');
+
+
+        // $t=time();
+        //$place->time = date("d/m/Y",$t);
+        $place->time = "$daymonth$year$hour";
 
 
 
@@ -143,18 +191,30 @@ class PDFController extends Controller
         // $pdf->loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
         //return $pdf->stream();
 
+
+
         $pdf = Pdf::loadView('user.pdf.general_place', ["place"=>$place]);
 
 
-        return $pdf->stream();
-
+        $file_name= "$place->name-$place->time";
+        return $pdf->stream("$file_name.pdf");
     }
 
     public function pdfGeneralPlaceAnnounce($id)
     {
         $place = PlaceGeneral::where('id', $id)->first();
-        $t=time();
-        $place->time = date("Y-m-d-h:i:s",$t);
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized(' %H:%M:%S');
+
+
+        // $t=time();
+        //$place->time = date("d/m/Y",$t);
+        $place->time = "$daymonth$year$hour";
 
         // $pdf = app('dompdf.wrapper');
         // $pdf->loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
@@ -165,7 +225,8 @@ class PDFController extends Controller
 
         $pdf = Pdf::loadView('user.pdf.general_place_announce', ["place"=>$place]);
 
-        return $pdf->stream();
+        $file_name= "$place->name-$place->time";
+        return $pdf->stream("$file_name.pdf");
 
 
         //$html = view('user.pdf.general_place')->with('place',$place)->render();
@@ -174,6 +235,80 @@ class PDFController extends Controller
        // $pdf->writeHTML($html);
      //   return $pdf;
        // $pdf->stream();
+        //$pdf->Output();
+    }
+
+    public function pdfCrimePlace($id)
+    {
+        $place = CrimePlace::where('id', $id)->first();
+
+
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized('-%H:%M:%S');
+
+
+        // $t=time();
+        //$place->time = date("d/m/Y",$t);
+        $place->time = "$daymonth$year$hour";
+
+
+
+        // $pdf = app('dompdf.wrapper');
+        // $pdf->loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
+        //return $pdf->stream();
+
+        $pdf = Pdf::loadView('user.pdf.crime_place', ["place"=>$place]);
+
+
+        $file_name= "$place->name-$place->time";
+        return $pdf->stream("$file_name.pdf");
+
+    }
+
+    public function pdfCrimePlaceAnnounce($id)
+    {
+
+
+        $place = CrimePlace::where('id', $id)->first();
+
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized('-%H:%M:%S');
+
+
+       // $t=time();
+        //$place->time = date("d/m/Y",$t);
+        $place->time = "$daymonth$year$hour";
+
+
+        // $pdf = app('dompdf.wrapper');
+        // $pdf->loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
+        //return $pdf->stream();
+
+        //  return view('user.pdf.general_place')
+        //      ->with('place',$place);
+
+        $pdf = Pdf::loadView('user.pdf.crime_place_announce', ["place"=>$place]);
+
+        $file_name= "$place->name-$place->time";
+        return $pdf->stream("$file_name.pdf");
+
+
+        //$html = view('user.pdf.general_place')->with('place',$place)->render();
+        //  return $html;
+        //$pdf= new \mPDF();
+        // $pdf->writeHTML($html);
+        //   return $pdf;
+        // $pdf->stream();
         //$pdf->Output();
     }
 

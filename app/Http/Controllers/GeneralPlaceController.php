@@ -72,6 +72,14 @@ class GeneralPlaceController extends Controller
 
     public function postCreate(Request $request)
     {
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('-%d-%m');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized(' %H:%M:%S');
+        $date = "$year$daymonth$hour";
 
         $form = $request->get('place');
         $newPlace = new PlaceGeneral();
@@ -80,12 +88,12 @@ class GeneralPlaceController extends Controller
         $currentUser = Auth::id();
 
         $newPlace->created_by()->associate($currentUser);
-
+        $newPlace->time_at = $date;
         $newPlace->save();
+        return redirect("/general_place");
+       // $lastInsertedId = $newPlace->id;
 
-        $lastInsertedId = $newPlace->id;
-
-        return redirect("/general_place/$lastInsertedId/map");
+        //return redirect("/general_place/$lastInsertedId/map");
     }
     public function postDelete(Request $request, $id)
     {

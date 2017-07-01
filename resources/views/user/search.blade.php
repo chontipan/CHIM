@@ -18,7 +18,7 @@
                         <div class="panel-body">
                             <form class="form-horizontal" method="get" action="/search">
                                 <div class="input-group input-group-md" style="width: 600px;">
-                                    <input type="text" name="keyword" class="form-control pull-right"
+                                    <input required type="text" name="keyword" class="form-control pull-right"
                                            placeholder="กรอกชื่อ หมายเลขบัตร ชื่อสถานที่ อำเภอที่ตั้ง จังหวัดที่ตั้ง" value={{$keyword}}>
 
                                     <div class="input-group-btn">
@@ -247,6 +247,74 @@
 
             </div>
 
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">สถานที่ที่เกี่ยวข้องกับอาชญากรรม</div>
+
+                        <div class="panel-body">
+                            <!-- /.box-header -->
+                            <div class="row">
+
+                <div class="col-md-12">
+                    จำนวนสถานที่ที่เกี่ยวข้องกับอาชญากรรมทั้งหมด {{ $crime_places->total() }} สถานที่
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>วันที่บันทึก</th>
+                    <th>ชื่อสถานที่</th>
+                    <th>อำเภอ</th>
+                    <th>จังหวัด</th>
+                    <th>ชื่อเจ้าของ</th>
+                    <th>ชื่อผู้ดูแล</th>
+
+
+                    <th>การจัดการ</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($crime_places as $crime_place)
+                    <tr>
+                        <td>{{$crime_place->time_at}}</td>
+
+                        <td>{{$crime_place->name}}</td>
+                        <td>{{$crime_place->district}}</td>
+                        <td>{{$crime_place->province}}</td>
+                        <td>{{$crime_place->owner_name}}</td>
+                        <td>{{$crime_place->manager_name}}</td>
+
+                        <td>
+                            <a href="/crime_place/pdf_announce/{{$crime_place->id}}"  target="_blank" class="btn btn-warning">Short-Pdf</a>
+                            <a href="/crime_place/pdf/{{$crime_place->id}}"  target="_blank" class="btn btn-success">Full-Pdf</a>
+                            <button onclick="deleteCrimePlace({{$crime_place->id}})" type="button"
+                                    class="btn btn-danger">ลบ
+                            </button>
+
+                        </td>
+                    </tr>
+                @endforeach
+
+                </tbody>
+            </table>
+                            <form id="deleteCrimePlace" method="post">
+                                {{csrf_field()}}
+                            </form>
+
+            <div class="row">
+                <div class="col-md-12">
+                    จำนวนสถานที่ที่เกี่ยวข้องกับอาชญากรรมในหน้านี้ {{ $crime_places->count() }} สถานที่
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ $crime_places->links() }}
+                </div>
+            </div>
+
+
+</div></div></div></div>
         </section>
         <!-- /.content -->
 
@@ -275,6 +343,13 @@
           if(confirm("คุณต้องการเป็นผู้ลบประวัติสถานที่นี้?")){
               var form = document.getElementById('deletePlace');
               form.setAttribute('action',"/general_place/"+id+"/delete/{{$keyword}}")
+              form.submit()
+          }
+      }
+      function deleteCrimePlace(id) {
+          if(confirm("คุณต้องการเป็นผู้ลบประวัติสถานที่นี้?")){
+              var form = document.getElementById('deleteCrimePlace');
+              form.setAttribute('action',"/crime_place/"+id+"/delete/{{$keyword}}")
               form.submit()
           }
       }

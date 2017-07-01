@@ -5,15 +5,20 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <a href="/home">หน้าหลัก</a>/แบบประวัติบุคคลทั่วไป
-            <h1>
-                แบบประวัติบุคคลทั่วไป
-            </h1>
+
         </section>
 
         <!-- Main content -->
         <section class="content">
-            <div class="row">
 
+<div style="padding-top: 2em">
+            <div class="panel panel-success">
+                <div class="panel-heading">แบบประวัติบุคคลทั่วไป</div>
+
+                <div class="panel-body">
+
+
+            <div class="row">
                         <!-- /.box-header -->
                         <!-- form start -->
                         <form class="form-horizontal" method="post" action="/person/create" enctype="multipart/form-data">
@@ -22,10 +27,9 @@
 
                             <div class="row">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">ประเภทบุคคล</label>
-                                    <div class="col-sm-10">
+                                    <label class="col-md-2 control-label">ประเภทบุคคล</label>
+                                    <div class="col-md-4">
                                         <input type="text"
-
                                                name="person[type_person]"
                                                value=""
                                                class="form-control" placeholder="ประเภทบุคคล">
@@ -35,15 +39,15 @@
 
                                 <div class="row">
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">1.ชื่อ-ชื่อสกุล</label>
-                                            <div class="col-sm-8">
+                                            <label class="col-md-2 control-label">1.ชื่อ-ชื่อสกุล</label>
+                                            <div class="col-md-4">
                                                 <input required type="text"
                                                        id="keyword_name"
                                                        name="person[fullname]"
                                                        value=""
                                                        class="form-control" placeholder="ชื่อ-ชื่อสกุล">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-md-2">
                                                 <a href="#" id="search_name" class="btn btn-default">ค้นหา</a>
 
                                             </div>
@@ -53,16 +57,16 @@
                                 <div class="row">
 
                                         <div class="form-group">
-                                            <label style="text-align: left" class="col-sm-2 control-label">
+                                            <label style="text-align: left" class="col-md-2 control-label">
                                                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                                 อายุ</label>
-                                            <div class="col-sm-8">
+                                            <div class="col-md-4">
                                                 <input  type="text"
                                                        name="person[age]"
                                                        value=""
                                                        class="form-control" placeholder="อายุ">
                                             </div>
-                                            <label style="text-align: left" class="col-sm-2 control-label">ปี</label>
+                                            <label style="text-align: left" class="col-md-2 control-label">ปี</label>
                                         </div>
 
                                 </div>
@@ -70,10 +74,10 @@
                             <div class="row">
 
                                 <div class="form-group">
-                                    <label style="text-align: left" class="col-sm-3 control-label">
+                                    <label style="text-align: left" class="col-md-3 control-label">
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         ประเภทบัตร</label>
-                                    <div class="col-sm-9">
+                                    <div class="col-md-3">
 
                                             <select class="form-control" name="person[type_identity]">
                                                 <option value="">กรุณาเลือกบัตร</option>
@@ -90,10 +94,10 @@
                             <div class="row">
 
                                 <div class="form-group">
-                                    <label style="text-align: left" class="col-sm-3 control-label">
+                                    <label style="text-align: left" class="col-md-3 control-label">
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         หมายเลขบัตร</label>
-                                    <div class="col-sm-7">
+                                    <div class="col-md-3">
                                         <input  type="text"
                                                 id="keyword_identity"
                                                name="person[identity]"
@@ -101,7 +105,7 @@
                                                class="form-control" placeholder="หมายเลขบัตร">
                                     </div>
 
-                                    <div class="col-sm-2">
+                                    <div class="col-md-2">
 
                                         <a href="#" id="search_identity" class="btn btn-default">ค้นหา</a>
 
@@ -113,10 +117,10 @@
                                 <div class="row">
 
                                         <div class="form-group">
-                                            <label style="text-align: left" class="col-sm-2 control-label">
+                                            <label style="text-align: left" class="col-md-2 control-label">
                                                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
                                                 2.อาชีพ</label>
-                                            <div class="col-sm-10">
+                                            <div class="col-md-4">
                                                 <input  type="text"
                                                        name="person[job]"
                                                        value=""
@@ -141,7 +145,7 @@
                                         <label class="col-md-2 control-label">
                                             3.1
                                         </label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-9">
                                             <input  type="text"
                                                    name="person[workplace1]"
                                                    value=""
@@ -157,7 +161,7 @@
                                         <label class="col-md-2 control-label">
                                             โทร
                                         </label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-9">
                                             <input  type="text"
                                                    name="person[workplace1_tel]"
                                                    value=""
@@ -173,7 +177,7 @@
                                         <label class="col-md-2 control-label">
                                             3.2
                                         </label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-9">
                                             <input  type="text"
                                                    name="person[workplace2]"
                                                    value=""
@@ -189,7 +193,7 @@
                                         <label class="col-md-2 control-label">
                                             โทร
                                         </label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-9">
                                             <input  type="text"
                                                    name="person[workplace2_tel]"
                                                    value=""
@@ -215,7 +219,7 @@
                                         <label class="col-md-2 control-label">
                                             4.1&nbsp;ปัจจุบัน
                                         </label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-9">
                                             <input  type="text"
                                                    name="person[current_address]"
                                                    value=""
@@ -231,7 +235,7 @@
                                         <label class="col-md-2 control-label">
                                             โทร
                                         </label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-9">
                                             <input  type="text"
                                                    name="person[current_address_tel]"
                                                    value=""
@@ -247,7 +251,7 @@
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             4.2&nbsp;ภูมิลำเนาเดิม
                                         </label>
-                                        <div style="padding-left: 0em" class="col-md-9">
+                                        <div style="padding-left: 0em" class="col-md-8">
                                             <input  type="text"
                                                    name="person[origin_address]"
                                                    value=""
@@ -263,7 +267,7 @@
                                         <label class="col-md-2 control-label">
                                             โทร
                                         </label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-9">
                                             <input  type="text"
                                                    name="person[origin_address_tel]"
                                                    value=""
@@ -285,7 +289,7 @@
                                                    value=""
                                                    class="form-control" placeholder="ชื่อบิดา">
                                         </div>
-                                        <label class="col-md-2 control-label">อายุ</label>
+                                        <label class="col-md-1 control-label">อายุ</label>
                                         <div class="col-md-1">
                                             <input  type="text"
                                                    name="person[father_age]"
@@ -323,12 +327,47 @@
                                                    value=""
                                                    class="form-control" placeholder="ที่อยู่">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
-                                        <div class="col-md-4">
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="person[father_address_tel]"
                                                     value=""
                                                     class="form-control" placeholder="เบอร์โทรติดต่อ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label  style="text-align: left" class="col-md-2 control-label">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;อาชีพ</label>
+                                        <div class="col-md-2">
+                                            <input  type="text"
+                                                    name="person[father_job]"
+                                                    value=""
+                                                    class="form-control" placeholder="อาชีพ">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label  style="text-align: left" class="col-md-2 control-label">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;ที่ทำงาน</label>
+                                        <div class="col-md-4">
+                                            <input  type="text"
+                                                    name="person[father_workplace]"
+                                                    value=""
+                                                    class="form-control" placeholder="ที่อยู่">
+                                        </div>
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-3">
+                                            <input  type="text"
+                                                    name="person[father_workplace_tel]"
+                                                    value=""
+                                                    class="form-control" placeholder="โทร">
                                         </div>
                                     </div>
                                 </div>
@@ -347,7 +386,7 @@
                                                     value=""
                                                     class="form-control" placeholder="ชื่อมารดา">
                                         </div>
-                                        <label class="col-md-2 control-label">อายุ</label>
+                                        <label class="col-md-1 control-label">อายุ</label>
                                         <div class="col-md-1">
                                             <input  type="text"
                                                     name="person[mother_age]"
@@ -385,8 +424,8 @@
                                                     value=""
                                                     class="form-control" placeholder="ที่อยู่">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
-                                        <div class="col-md-4">
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="person[mother_address_tel]"
                                                     value=""
@@ -395,7 +434,41 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label  style="text-align: left" class="col-md-2 control-label">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;อาชีพ</label>
+                                        <div class="col-md-2">
+                                            <input  type="text"
+                                                    name="person[mother_job]"
+                                                    value=""
+                                                    class="form-control" placeholder="อาชีพ">
+                                        </div>
 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label  style="text-align: left" class="col-md-2 control-label">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;ที่ทำงาน</label>
+                                        <div class="col-md-4">
+                                            <input  type="text"
+                                                    name="person[mother_workplace]"
+                                                    value=""
+                                                    class="form-control" placeholder="ที่อยู่">
+                                        </div>
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-3">
+                                            <input  type="text"
+                                                    name="person[mother_workplace_tel]"
+                                                    value=""
+                                                    class="form-control" placeholder="โทร">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
@@ -409,7 +482,7 @@
                                                     value=""
                                                     class="form-control" placeholder="ชื่อสามี/ภรรยา">
                                         </div>
-                                        <label class="col-md-2 control-label">อายุ</label>
+                                        <label class="col-md-1 control-label">อายุ</label>
                                         <div class="col-md-1">
                                             <input  type="text"
                                                     name="person[spouse_age]"
@@ -447,8 +520,8 @@
                                                     value=""
                                                     class="form-control" placeholder="ที่อยู่">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
-                                        <div class="col-md-4">
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="person[spouse_address_tel]"
                                                     value=""
@@ -457,7 +530,41 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label  style="text-align: left" class="col-md-2 control-label">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;อาชีพ</label>
+                                        <div class="col-md-2">
+                                            <input  type="text"
+                                                    name="person[spouse_job]"
+                                                    value=""
+                                                    class="form-control" placeholder="อาชีพ">
+                                        </div>
 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label  style="text-align: left" class="col-md-2 control-label">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;ที่ทำงาน</label>
+                                        <div class="col-md-4">
+                                            <input  type="text"
+                                                    name="person[spouse_workplace]"
+                                                    value=""
+                                                    class="form-control" placeholder="ที่อยู่">
+                                        </div>
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-3">
+                                            <input  type="text"
+                                                    name="person[spouse_workplace_tel]"
+                                                    value=""
+                                                    class="form-control" placeholder="โทร">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
@@ -475,7 +582,7 @@
                                         <label class="col-md-2 control-label">
                                             1.
                                         </label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="person[child1_name]"
                                                     value=""
@@ -515,7 +622,7 @@
                                                     value=""
                                                     class="form-control" placeholder="ที่ทำงาน">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
+                                        <label class="col-md-1 control-label">โทร</label>
                                         <div class="col-md-3">
                                             <input  type="text"
                                                     name="person[child1_tel]"
@@ -531,7 +638,7 @@
                                         <label class="col-md-2 control-label">
                                             2.
                                         </label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="person[child2_name]"
                                                     value=""
@@ -571,7 +678,7 @@
                                                     value=""
                                                     class="form-control" placeholder="ที่ทำงาน">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
+                                        <label class="col-md-1 control-label">โทร</label>
                                         <div class="col-md-3">
                                             <input  type="text"
                                                     name="person[child2_tel]"
@@ -587,7 +694,7 @@
                                         <label class="col-md-2 control-label">
                                             3.
                                         </label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="person[child3_name]"
                                                     value=""
@@ -627,7 +734,7 @@
                                                     value=""
                                                     class="form-control" placeholder="ที่ทำงาน">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
+                                        <label class="col-md-1 control-label">โทร</label>
                                         <div class="col-md-3">
                                             <input  type="text"
                                                     name="person[child3_tel]"
@@ -655,7 +762,7 @@
                                         <label class="col-md-2 control-label">
                                             1.
                                         </label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-9">
                                             <input  type="text"
                                                     name="person[vehicle1]"
                                                     value=""
@@ -670,7 +777,7 @@
                                         <label class="col-md-2 control-label">
                                             2.
                                         </label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-9">
                                             <input  type="text"
                                                     name="person[vehicle2]"
                                                     value=""
@@ -702,7 +809,7 @@
                                                     value=""
                                                     class="form-control" placeholder="ชื่อ ชื่อสกุล">
                                         </div>
-                                        <label class="col-md-2 control-label">
+                                        <label class="col-md-1 control-label">
                                             อายุ
                                         </label>
                                         <div class="col-md-1">
@@ -724,7 +831,7 @@
                                         <label class="col-md-3 control-label">
                                             &nbsp;&nbsp;หมายเลขประจำตัวประชาชน
                                         </label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="person[family_member1_identity]"
                                                     value=""
@@ -755,7 +862,7 @@
                                                     value=""
                                                     class="form-control" placeholder="สถานที่ทำงาน">
                                         </div>
-                                        <label class="col-md-2 control-label">
+                                        <label class="col-md-1 control-label">
                                             โทร
                                         </label>
                                         <div class="col-md-3">
@@ -774,7 +881,7 @@
                                         <label style="text-align: left" class="col-md-3 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;ที่อยู่ตามภูมิลำเนาเดิม
                                         </label>
-                                        <div class="col-md-9">
+                                        <div class="col-md-8">
                                             <input  type="text"
                                                     name="person[family_member1_address]"
                                                     value=""
@@ -798,7 +905,7 @@
                                                     value=""
                                                     class="form-control" placeholder="ชื่อ ชื่อสกุล">
                                         </div>
-                                        <label class="col-md-2 control-label">
+                                        <label class="col-md-1 control-label">
                                             อายุ
                                         </label>
                                         <div class="col-md-1">
@@ -826,7 +933,7 @@
                                                     value=""
                                                     class="form-control" placeholder="หมายเลขประจำตัวประชาชน">
                                         </div>
-                                        <label class="col-md-2 control-label">
+                                        <label class="col-md-1 control-label">
                                             อาชีพ
                                         </label>
                                         <div class="col-md-3">
@@ -851,7 +958,7 @@
                                                     value=""
                                                     class="form-control" placeholder="สถานที่ทำงาน">
                                         </div>
-                                        <label class="col-md-2 control-label">
+                                        <label class="col-md-1 control-label">
                                             โทร
                                         </label>
                                         <div class="col-md-3">
@@ -870,7 +977,7 @@
                                         <label style="text-align: left" class="col-md-3 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;ที่อยู่ตามภูมิลำเนาเดิม
                                         </label>
-                                        <div class="col-md-9">
+                                        <div class="col-md-8">
                                             <input  type="text"
                                                     name="person[family_member2_address]"
                                                     value=""
@@ -894,7 +1001,7 @@
                                                     value=""
                                                     class="form-control" placeholder="ชื่อ ชื่อสกุล">
                                         </div>
-                                        <label class="col-md-2 control-label">
+                                        <label class="col-md-1 control-label">
                                             อายุ
                                         </label>
                                         <div class="col-md-1">
@@ -922,7 +1029,7 @@
                                                     value=""
                                                     class="form-control" placeholder="หมายเลขประจำตัวประชาชน">
                                         </div>
-                                        <label class="col-md-2 control-label">
+                                        <label class="col-md-1 control-label">
                                             อาชีพ
                                         </label>
                                         <div class="col-md-3">
@@ -947,7 +1054,7 @@
                                                     value=""
                                                     class="form-control" placeholder="สถานที่ทำงาน">
                                         </div>
-                                        <label class="col-md-2 control-label">
+                                        <label class="col-md-1 control-label">
                                             โทร
                                         </label>
                                         <div class="col-md-3">
@@ -966,7 +1073,7 @@
                                         <label style="text-align: left" class="col-md-3 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;ที่อยู่ตามภูมิลำเนาเดิม
                                         </label>
-                                        <div class="col-md-9">
+                                        <div class="col-md-8">
                                             <input  type="text"
                                                     name="person[family_member3_address]"
                                                     value=""
@@ -1000,7 +1107,7 @@
                                                     value=""
                                                     class="form-control" placeholder="ชื่อ ชื่อสกุล">
                                         </div>
-                                        <label class="col-md-2 control-label">
+                                        <label class="col-md-1 control-label">
                                             อายุ
                                         </label>
                                         <div class="col-md-1">
@@ -1040,7 +1147,7 @@
                                         <label style="text-align: left" class="col-md-3 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;ที่อยู่ตามภูมิลำเนาเดิม
                                         </label>
-                                        <div class="col-md-9">
+                                        <div class="col-md-8">
                                             <input  type="text"
                                                     name="person[employee1_address]"
                                                     value=""
@@ -1064,7 +1171,7 @@
                                                     value=""
                                                     class="form-control" placeholder="ชื่อ ชื่อสกุล">
                                         </div>
-                                        <label class="col-md-2 control-label">
+                                        <label class="col-md-1 control-label">
                                             อายุ
                                         </label>
                                         <div class="col-md-1">
@@ -1104,7 +1211,7 @@
                                         <label style="text-align: left" class="col-md-3 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;ที่อยู่ตามภูมิลำเนาเดิม
                                         </label>
-                                        <div class="col-md-9">
+                                        <div class="col-md-8">
                                             <input  type="text"
                                                     name="person[employee2_address]"
                                                     value=""
@@ -1129,10 +1236,9 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <div class="col-md-2"></div>
-                                        <div class="col-md-10">
-                                            <textarea  type="text"
+                                        <div class="col-md-9">
+                                            <textarea rows="4" cols="50"
                                                     name="person[others]"
-                                                    value=""
                                                     class="form-control" placeholder="อื่นๆที่น่าสนใจ">
                                             </textarea>
                                         </div>
@@ -1168,8 +1274,7 @@
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary ">บันทึก</button>
-
+<button type="submit" class="btn btn-primary ">บันทึก</button>
                                     <a href="/person" class="btn btn-default ">ยกเลิก</a>
                                     </div>
 
@@ -1182,6 +1287,9 @@
 
 
             </div>
+                </div>
+            </div>
+</div>
         </section>
         <!-- /.content -->
     </div>
@@ -1245,5 +1353,6 @@
 */
 
         //});
+
     </script>
 @endsection

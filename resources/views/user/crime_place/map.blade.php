@@ -4,7 +4,7 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <a href="/home">หน้าหลัก</a>/แผนที่สถานที่ทั่วไป
+            <a href="/home">หน้าหลัก</a>/แผนที่สถานที่ที่เกี่ยวข้องกับอาชญากรรม
 
         </section>
 
@@ -37,7 +37,7 @@
                 lng: value.lng,
                 title: value.name,
                 click: function(e) {
-                    window.open('/general_place/pdf/'+value.id, '_blank');
+                    window.open('/crime_place/pdf/'+value.id, '_blank');
 
                 }
             });

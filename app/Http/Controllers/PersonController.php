@@ -68,6 +68,16 @@ class PersonController extends Controller
     public function postCreate(Request $request)
     {
 
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('-%d-%m');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized(' %H:%M:%S');
+        $date = "$year$daymonth$hour";
+
+
         if($request->hasFile('pic_path')) {
             $result = ImageuploadFacade::upload($request->file('pic_path'));
             $dimension = $result['dimensions'];
@@ -86,6 +96,7 @@ class PersonController extends Controller
         $currentUser = Auth::id();
 
         $newPerson->created_by()->associate($currentUser);
+        $newPerson->time_at = $date;
 
         $newPerson->save();
 

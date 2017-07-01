@@ -22,15 +22,14 @@
     <table width="100%" style="vertical-align: bottom; font-family: TH SarabunPSK; font-size: 14pt; color: #000000;  "><tr>
             <td width="20%">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;หน้า {PAGENO}</td>
 
-
         </tr></table>
 
 </htmlpageheader>
 
 <htmlpagefooter name="page-footer">
-<?php
+    <?php
     $user = Auth::user();
-?>
+    ?>
 
     <table width='100%' style='vertical-align: bottom; font-family: garuda; font-size: 8pt; color: #000000;  font-style: italic;'><tr>
 
@@ -41,7 +40,7 @@
 
 <table align="center" border="0" width="100%">
     <ol><tr>
-        <td colspan="4" ><h3 style="text-align: center">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;แบบประวัติสถานที่ทั่วไป</h3></td>
+            <td colspan="4" ><h3 style="text-align: center">&emsp;&emsp;&emsp;&emsp;แบบประวัติสถานที่ที่เกี่ยวข้องกับอาชญากรรม</h3></td>
         </tr>
         <tr>
             <td colspan="2"></td>
@@ -78,13 +77,13 @@
                 <td colspan="2">&nbsp;&nbsp;&nbsp;อำเภอ : <label><?php echo $place->district ?> </label></td>
                 @if($place->province)
 
-                <td colspan="2">&nbsp;&nbsp;&nbsp;จังหวัด : <label><?php echo $place->province ?> </label></td>
+                    <td colspan="2">&nbsp;&nbsp;&nbsp;จังหวัด : <label><?php echo $place->province ?> </label></td>
 
                 @else
                     <td colspan="2">&nbsp;&nbsp;&nbsp;จังหวัด : <label> - </label></td>
                 @endif
                     @else
-                <td colspan="2">&nbsp;&nbsp;&nbsp;อำเภอ : <label> - </label></td>
+                        <td colspan="2">&nbsp;&nbsp;&nbsp;อำเภอ : <label> - </label></td>
                         @if($place->province)
 
                             <td colspan="2">&nbsp;&nbsp;&nbsp;จังหวัด : <label><?php echo $place->province ?> </label></td>
@@ -215,9 +214,15 @@
                 <td colspan="4">7.ข้อมูลสำคัญที่ควรทราบ : <label> - </label></td>
             @endif
         </tr>
+        <tr rowspan="3">
+            @if($place->place_crime_desc)
+                <td colspan="4">8.พฤติการณ์ ประวัติที่เคยเกี่ยวข้องกับการประพฤติผิด: <label><?php echo $place->place_crime_desc ?></label></td>
+            @else
+                <td colspan="4">8.พฤติการณ์ ประวัติที่เคยเกี่ยวข้องกับการประพฤติผิด : <label> - </label></td>
+            @endif
+        </tr>
 
-
-</ol>
+    </ol>
 
     <tr>
         <td colspan="2"></td>
@@ -296,5 +301,6 @@
 
 </body>
 </html>
+
 
 

@@ -5,25 +5,28 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <a href="/home">หน้าหลัก</a>/แบบประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม
-            <h1>
-                แบบประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม
-            </h1>
+
         </section>
 
         <!-- Main content -->
         <section class="content">
+            <div style="padding-top: 2em">
+            <div class="panel panel-danger">
+                <div class="panel-heading">แบบประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม</div>
+
+                <div class="panel-body">
+
             <div class="row">
 
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form class="form-horizontal" method="post" action="/criminal/create" enctype="multipart/form-data">
-
+                <form class="form-horizontal" method="post" action="/criminal/create" enctype="multipart/form-data">
                                 {{csrf_field()}}
 
                             <div class="row">
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">ประเภทบุคคล</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-4">
                                         <input type="text"
                                                name="criminal[type_person]"
                                                value=""
@@ -35,7 +38,7 @@
                                 <div class="row">
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">1. ชื่อ-ชื่อสกุล</label>
-                                            <div class="col-sm-8">
+                                            <div class="col-sm-4">
                                                 <input required type="text"
                                                        id="keyword_name"
                                                        name="criminal[fullname]"
@@ -52,9 +55,9 @@
 
                                         <div class="form-group">
                                             <label style="text-align: left" class="col-sm-2 control-label">
-                                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                                 2. อายุ</label>
-                                            <div class="col-sm-8">
+                                            <div class="col-sm-2">
                                                 <input  type="text"
                                                        name="criminal[age]"
                                                        value=""
@@ -70,7 +73,7 @@
                                     <label style="text-align: left" class="col-sm-3 control-label">
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         1.1 นามแฝง</label>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-4">
                                         <input  type="text"
                                                 name="criminal[nickname1]"
                                                 value=""
@@ -86,7 +89,7 @@
                                     <label style="text-align: left" class="col-sm-3 control-label">
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         1.2 นามแฝง</label>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-4">
                                         <input  type="text"
                                                 name="criminal[nickname2]"
                                                 value=""
@@ -103,7 +106,7 @@
                                     <label style="text-align: left" class="col-sm-3 control-label">
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         ประเภทบัตร</label>
-                                    <div class="col-sm-9">
+                                    <div class="col-sm-3">
 
                                             <select class="form-control" name="criminal[type_identity]">
                                                 <option value="">กรุณาเลือกบัตร</option>
@@ -123,7 +126,7 @@
                                     <label style="text-align: left" class="col-sm-3 control-label">
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         หมายเลขบัตร</label>
-                                    <div class="col-sm-7">
+                                    <div class="col-sm-4">
                                         <input  type="text"
                                                 id="keyword_identity"
                                                name="criminal[identity]"
@@ -142,10 +145,10 @@
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <label style="text-align: left" class="col-md-4 control-label">
+                                        <label style="text-align: left" class="col-md-3 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
                                             3.ที่อยู่ปัจจุบัน</label>
-                                        <div class="col-md-8">
+                                        <div class="col-md-7">
                                             <input  type="text"
                                                     name="criminal[current_address]"
                                                     value=""
@@ -162,7 +165,7 @@
                                         <label class="col-md-2 control-label">
                                             โทร
                                         </label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-4">
                                             <input  type="text"
                                                     name="criminal[current_address_tel]"
                                                     value=""
@@ -177,7 +180,7 @@
                                         <label style="text-align: left" class="col-md-3 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&nbsp;&nbsp;ภูมิลำเนาเดิม
                                         </label>
-                                        <div style="padding-left: 0em" class="col-md-9">
+                                        <div style="padding-left: 0em" class="col-md-7">
                                             <input  type="text"
                                                     name="criminal[origin_address]"
                                                     value=""
@@ -193,7 +196,7 @@
                                         <label class="col-md-2 control-label">
                                             โทร
                                         </label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-4">
                                             <input  type="text"
                                                     name="criminal[origin_address_tel]"
                                                     value=""
@@ -210,13 +213,13 @@
                                             <label style="text-align: left" class="col-sm-2 control-label">
                                                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
                                                 4.อาชีพ</label>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-2">
                                                 <input  type="text"
                                                        name="criminal[job]"
                                                        value=""
                                                        class="form-control" placeholder="อาชีพ">
                                             </div>
-                                            <label style="text-align: left" class="col-sm-2 control-label">
+                                            <label style="text-align: left" class="col-sm-3 control-label">
                                                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
                                                 สถานที่ทำงาน</label>
                                             <div class="col-sm-4">
@@ -234,10 +237,10 @@
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <label class="col-md-2 control-label">
-                                            5.การศึกษา
+                                        <label style="text-align: left" class="col-md-2 control-label">
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;5.การศึกษา
                                         </label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-4">
                                             <input  type="text"
                                                     name="criminal[education]"
                                                     value=""
@@ -253,7 +256,7 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label style="text-align: left" class="col-md-2 control-label">
-                                            &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
                                             6.ชื่อบิดา</label>
                                         <div class="col-md-4">
                                             <input  type="text"
@@ -261,7 +264,7 @@
                                                    value=""
                                                    class="form-control" placeholder="ชื่อบิดา">
                                         </div>
-                                        <label class="col-md-2 control-label">อายุ</label>
+                                        <label class="col-md-1 control-label">อายุ</label>
                                         <div class="col-md-1">
                                             <input  type="text"
                                                    name="criminal[father_age]"
@@ -299,8 +302,8 @@
                                                    value=""
                                                    class="form-control" placeholder="ที่อยู่">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
-                                        <div class="col-md-4">
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-2">
                                             <input  type="text"
                                                     name="criminal[father_address_tel]"
                                                     value=""
@@ -316,7 +319,7 @@
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-2 control-label">&emsp;&emsp;&emsp;
                                             &emsp;&emsp;&emsp;&nbsp;&nbsp;อาชีพ</label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-4">
                                             <input  type="text"
                                                     name="criminal[father_job]"
                                                     value=""
@@ -337,8 +340,8 @@
                                                     value=""
                                                     class="form-control" placeholder="ที่ทำงาน">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
-                                        <div class="col-md-4">
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-2">
                                             <input  type="text"
                                                     name="criminal[father_workplace_tel]"
                                                     value=""
@@ -361,7 +364,7 @@
                                                     value=""
                                                     class="form-control" placeholder="ชื่อมารดา">
                                         </div>
-                                        <label class="col-md-2 control-label">อายุ</label>
+                                        <label class="col-md-1 control-label">อายุ</label>
                                         <div class="col-md-1">
                                             <input  type="text"
                                                     name="criminal[mother_age]"
@@ -395,15 +398,15 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-2 control-label">&emsp;
-                                            &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;ที่ทำงาน</label>
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;ที่อยู่</label>
                                         <div class="col-md-4">
                                             <input  type="text"
                                                     name="criminal[mother_address]"
                                                     value=""
-                                                    class="form-control" placeholder="ที่ทำงาน">
+                                                    class="form-control" placeholder="ที่อยู่">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
-                                        <div class="col-md-4">
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-2">
                                             <input  type="text"
                                                     name="criminal[mother_address_tel]"
                                                     value=""
@@ -418,7 +421,7 @@
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-2 control-label">&emsp;&emsp;&emsp;
                                             &emsp;&emsp;&emsp;&nbsp;&nbsp;อาชีพ</label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-4">
                                             <input  type="text"
                                                     name="criminal[mother_job]"
                                                     value=""
@@ -438,8 +441,8 @@
                                                     value=""
                                                     class="form-control" placeholder="ที่ทำงาน">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
-                                        <div class="col-md-4">
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-2">
                                             <input  type="text"
                                                     name="criminal[mother_workplace_tel]"
                                                     value=""
@@ -461,7 +464,7 @@
                                                     value=""
                                                     class="form-control" placeholder="ชื่อสามี/ภรรยา">
                                         </div>
-                                        <label class="col-md-2 control-label">อายุ</label>
+                                        <label class="col-md-1 control-label">อายุ</label>
                                         <div class="col-md-1">
                                             <input  type="text"
                                                     name="criminal[spouse_age]"
@@ -499,8 +502,8 @@
                                                     value=""
                                                     class="form-control" placeholder="ที่อยู่">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
-                                        <div class="col-md-4">
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-2">
                                             <input  type="text"
                                                     name="criminal[spouse_address_tel]"
                                                     value=""
@@ -514,7 +517,7 @@
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-2 control-label">&emsp;&emsp;&emsp;
                                             &emsp;&emsp;&emsp;&nbsp;&nbsp;อาชีพ</label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-4">
                                             <input  type="text"
                                                     name="criminal[spouse_job]"
                                                     value=""
@@ -535,8 +538,8 @@
                                                     value=""
                                                     class="form-control" placeholder="ที่ทำงาน">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
-                                        <div class="col-md-4">
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-2">
                                             <input  type="text"
                                                     name="criminal[spouse_workplace_tel]"
                                                     value=""
@@ -599,8 +602,8 @@
                                                     value=""
                                                     class="form-control" placeholder="ที่อยู่">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
-                                        <div class="col-md-4">
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-2">
                                             <input  type="text"
                                                     name="criminal[child_address_tel]"
                                                     value=""
@@ -617,7 +620,7 @@
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-2 control-label">&emsp;&emsp;&emsp;
                                             &emsp;&emsp;&emsp;&nbsp;&nbsp;อาชีพ</label>
-                                        <div class="col-md-10">
+                                        <div class="col-md-4">
                                             <input  type="text"
                                                     name="criminal[child_job]"
                                                     value=""
@@ -629,7 +632,7 @@
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <label  style="text-align: left" class="col-md-3 control-label">
+                                        <label  style="text-align: left" class="col-md-2 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;ที่ทำงาน</label>
                                         <div class="col-md-4">
                                             <input  type="text"
@@ -637,8 +640,8 @@
                                                     value=""
                                                     class="form-control" placeholder="ที่ทำงาน">
                                         </div>
-                                        <label class="col-md-2 control-label">โทร</label>
-                                        <div class="col-md-3">
+                                        <label class="col-md-1 control-label">โทร</label>
+                                        <div class="col-md-2">
                                             <input  type="text"
                                                     name="criminal[child_workplace_tel]"
                                                     value=""
@@ -653,7 +656,7 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-3 control-label">
-                                            &emsp;&emsp;&emsp;&emsp;&emsp;10. ตำหนิรูปพรรณ</label>
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;10.ตำหนิรูปพรรณ</label>
                                         <label  style="text-align: left" class="col-md-3 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;สูงประมาณ</label>
                                         <div class="col-md-1">
@@ -673,9 +676,9 @@
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-2 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- รูปร่าง</label>
-                                        <label  style="text-align: left" class="col-md-4 control-label">
+                                        <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;สันทัด,อ้วน,เตี้ย,ผอม,สูง,อื่นๆ</label>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[shape]"
                                                     value=""
@@ -690,9 +693,9 @@
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-2 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- ฟัน</label>
-                                        <label  style="text-align: left" class="col-md-4 control-label">
+                                        <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;เหยิน,ปกติ,หลอ,ขาว</label>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[tooth]"
                                                     value=""
@@ -707,9 +710,9 @@
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-2 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- ผิว</label>
-                                        <label  style="text-align: left" class="col-md-4 control-label">
+                                        <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ดำ,ขาว,ดำแดง,ขาวเหลือง</label>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[skin]"
                                                     value=""
@@ -726,7 +729,7 @@
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- ทรงผม</label>
                                         <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;รองทรง,สั้นเกรียน,แสกซ้าย,หยิกหยักโศก,ยาวประบ่า</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[hair]"
                                                     value=""
@@ -743,7 +746,7 @@
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- ศรีษะ</label>
                                         <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;สามเหลี่ยม,สี่เหลี่ยม,กลม,รูปไข่,หัวล้าน(แบบไหน)</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[head]"
                                                     value=""
@@ -761,7 +764,7 @@
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- ใบหน้า</label>
                                         <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;สามเหลี่ยม,สี่เหลี่ยม,รูปไข่</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[face]"
                                                     value=""
@@ -778,7 +781,7 @@
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- คิ้ว</label>
                                         <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;หนา,บาง,คิ้วต่อ</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[eyebrow]"
                                                     value=""
@@ -796,7 +799,7 @@
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- ตา</label>
                                         <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;เล็ก,ตี่,ตาสองชั้น,ชั้นเดียว,ตาเหล่,ตาเอก</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[eye]"
                                                     value=""
@@ -813,7 +816,7 @@
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- หู</label>
                                         <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;กาง,บาน,แหว่ง,ปกติ</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[ear]"
                                                     value=""
@@ -831,7 +834,7 @@
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- จมูก</label>
                                         <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;โด่ง,แบน,โหว่,ธรรมดา</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[nose]"
                                                     value=""
@@ -849,7 +852,7 @@
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- ปาก</label>
                                         <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;หนา,บาง,แหว่ง,กว้าง,กระจับ</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[mouse]"
                                                     value=""
@@ -867,7 +870,7 @@
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- คาง</label>
                                         <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;สี่เหลี่ยม,สามเหลี่ยม,มน</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[chin]"
                                                     value=""
@@ -885,7 +888,7 @@
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- หนวด,เครา</label>
                                         <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;หนวดยาว,สั้น,มีเครา,ไม่มีเครา</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[beard]"
                                                     value=""
@@ -899,11 +902,11 @@
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <label  style="text-align: left" class="col-md-4 control-label">
+                                        <label  style="text-align: left" class="col-md-5 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- แผลเป็นหรือตำหนิพิการที่ติดตัวมาแต่กำเนิด</label>
-                                        <label  style="text-align: left" class="col-md-4 control-label">
+                                        <label  style="text-align: left" class="col-md-3 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ไฝ,ปาน,รอยแผลเป็น</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[scar]"
                                                     value=""
@@ -917,11 +920,11 @@
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <label  style="text-align: left" class="col-md-4 control-label">
+                                        <label  style="text-align: left" class="col-md-2 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- สำเนียง</label>
-                                        <label  style="text-align: left" class="col-md-4 control-label">
+                                        <label  style="text-align: left" class="col-md-6 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ภาคกลาง,อีสาน,ใต้,เหนือ</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[pronunciation]"
                                                     value=""
@@ -939,7 +942,7 @@
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- ลักษณะเด่นที่สังเกตเห็นได้ง่าย</label>
                                         <label  style="text-align: left" class="col-md-4 control-label">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ตาเหล่,ตาเอก,นิ้วหัวแม่มือซ้ายด้วน,ขาเป๋</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <input  type="text"
                                                     name="criminal[noteable]"
                                                     value=""
@@ -954,8 +957,8 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-4 control-label">
-                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;11. อุปนิสัย</label>
-                                        <div class="col-md-8">
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;11.อุปนิสัย</label>
+                                        <div class="col-md-7">
                                             <input  type="text"
                                                     name="criminal[behavior]"
                                                     value=""
@@ -969,8 +972,8 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-4 control-label">
-                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;12. สถานที่ชอบไปเที่ยวเตร่</label>
-                                        <div class="col-md-8">
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;12.สถานที่ชอบไปเที่ยวเตร่</label>
+                                        <div class="col-md-7">
                                             <input  type="text"
                                                     name="criminal[favor_place]"
                                                     value=""
@@ -985,8 +988,8 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-4 control-label">
-                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;13. ประวัติการกระทำความผิด</label>
-                                        <div class="col-md-8">
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;13.ประวัติการกระทำความผิด</label>
+                                        <div class="col-md-7">
                                             <input  type="text"
                                                     name="criminal[previous_crime]"
                                                     value=""
@@ -1001,8 +1004,8 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-4 control-label">
-                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;14. อาวุธที่ใช้ในการกระทำผิด</label>
-                                        <div class="col-md-8">
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;14.อาวุธที่ใช้ในการกระทำผิด</label>
+                                        <div class="col-md-7">
                                             <input  type="text"
                                                     name="criminal[weapon]"
                                                     value=""
@@ -1017,8 +1020,8 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-4 control-label">
-                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;15. ยานพาหนะที่ใช้</label>
-                                        <div class="col-md-8">
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;15.ยานพาหนะที่ใช้</label>
+                                        <div class="col-md-7">
                                             <input  type="text"
                                                     name="criminal[vehicle]"
                                                     value=""
@@ -1033,9 +1036,9 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-4 control-label">
-                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;16. ผู้ร่วมกระทำผิด</label>
-                                        <div class="col-md-8">
-                                             <textarea  type="text"
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;16.ผู้ร่วมกระทำผิด</label>
+                                        <div class="col-md-7">
+                                             <textarea rows="4" cols="50"
                                                     name="criminal[crime_related]"
                                                     value=""
                                                     class="form-control" placeholder="ผู้ร่วมกระทำผิด">
@@ -1050,11 +1053,11 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-4 control-label">
-                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;17. รายละเอียดหรือวิธีการกระทำความผิด</label>
-                                        <div class="col-md-8">
-                                            <textarea  type="text"
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;17.รายละเอียดหรือวิธีการกระทำความผิด</label>
+                                        <div class="col-md-7">
+                                            <textarea rows="4" cols="50"
                                                     name="criminal[crime_desc]"
-                                                    value=""
+
                                                     class="form-control" placeholder="รายละเอียดหรือวิธีการกระทำความผิด">
                                             </textarea>
                                         </div>
@@ -1067,13 +1070,13 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label  style="text-align: left" class="col-md-4 control-label">
-                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;18. พฤติการณ์อื่นๆที่น่าสนใจ</label>
-                                        <div class="col-md-8">
-                                            <input  type="text"
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;18.พฤติการณ์อื่นๆที่น่าสนใจ</label>
+                                        <div class="col-md-7">
+                                            <textarea rows="4" cols="50"
                                                        name="criminal[others]"
-                                                       value=""
+
                                                        class="form-control" placeholder="พฤติการณ์อื่นๆที่น่าสนใจ">
-                                            </input>
+                                            </textarea>
                                         </div>
 
                                     </div>
@@ -1109,7 +1112,7 @@
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary ">ตกลง</button>
+                                        <button type="submit" class="btn btn-primary ">บันทึก</button>
                                     <a href="/criminal" class="btn btn-default ">ยกเลิก</a>
                                     </div>
 
@@ -1121,6 +1124,9 @@
 
 
 
+            </div>
+                </div>
+            </div>
             </div>
         </section>
         <!-- /.content -->
@@ -1146,5 +1152,6 @@
                     }
                 });
             });
+
     </script>
 @endsection

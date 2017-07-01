@@ -4,9 +4,9 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <a href="/home">หน้าหลัก</a>/ระบุพิกัดสถานที่ทั่วไป
+            <a href="/home">หน้าหลัก</a>/ระบุพิกัดสถานที่ที่เกี่ยวข้องกับอาชญากรรม
             <h3>
-                สถานที่ทั่วไป: {{$place->name}}
+                สถานที่ที่เกี่ยวข้องกับอาชญากรรม: {{$place->name}}
             </h3>
 
         </section>
@@ -14,11 +14,11 @@
         <!-- Main content -->
         <section class="content">
             <div class="panel panel-info">
-                <div class="panel-heading">สถานที่ทั่วไป: {{$place->name}}</div>
+                <div class="panel-heading">สถานที่ที่เกี่ยวข้องกับอาชญากรรม: {{$place->name}}</div>
 
                 <div class="panel-body">
 
-                <form class="form" method="post" action="/general_place/{{$place->id}}/map/create"
+                <form class="form" method="post" action="/crime_place/{{$place->id}}/map/create"
                       enctype="multipart/form-data">
                     {{csrf_field()}}
 
@@ -26,8 +26,8 @@
                             <div class="form-group">
                         <label class="col-sm-1 control-label">ระบุพิกัด</label>
 
-                                  <input hidden id="pac-input" class="controls" type="text" placeholder="กรอกชื่ออำเภอ หรือ จังหวัด">
-                                     </div>
+                        <input hidden id="pac-input" class="controls" type="text" placeholder="กรอกชื่ออำเภอ หรือ จังหวัด">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
@@ -44,7 +44,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Latitude (ละติจูด)</label>
                         <div class="col-sm-10">
-                        <input required type="text" class="form-control input-sm" id="lat" name="lat" value="20.430461">
+                        <input required type="text" class="form-control input-sm" id="lat" name="lat">
                         </div>
                     </div>
                     </div>
@@ -52,7 +52,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Longitude (ลองจิจูด)</label>
                         <div class="col-sm-10">
-                        <input required type="text" class="form-control input-sm" id="lng" name="lng" value="99.884723">
+                        <input required type="text" class="form-control input-sm" id="lng" name="lng" >
                         </div>
                     </div>
                     </div>

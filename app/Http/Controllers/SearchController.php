@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CrimePlace;
 use App\PlaceGeneral;
 use Illuminate\Http\Request;
 use App\Person;
@@ -54,6 +55,14 @@ class SearchController extends Controller
             ->orderBy('created_at', 'desc')
             ->paginate(20);
 
+        $crime_places = CrimePlace::Where('name', 'like', "%$keyword%")
+            ->orWhere('owner_name', 'like', "%$keyword%")
+            ->orWhere('manager_name', 'like', "%$keyword%")
+            ->orWhere('owner_identity', 'like', "%$keyword%")
+            ->orWhere('manager_identity', 'like', "%$keyword%")
+            ->orderBy('created_at', 'desc')
+            ->paginate(20);
+
 
       
 
@@ -63,6 +72,7 @@ class SearchController extends Controller
                 ->with('criminals', $criminals)
                 ->with('places', $places)
                 ->with('keyword', $keyword)
+                ->with('crime_places', $crime_places)
                 //->with('person_count', $person_count)
                // ->with('criminal_count', $criminal_count)
                // ->with('place_count', $place_count)
@@ -78,8 +88,7 @@ class SearchController extends Controller
         $personDelete->deleted_by()->associate($currentUser);
         $personDelete->save();
         $personDelete->delete();
-        return redirect('/search')
-            ->with('keyword',$keyword);
+        return redirect("/search?keyword=$keyword");
     }
     public function criminalDelete(Request $request, $id, $keyword)
     {
@@ -101,6 +110,15 @@ class SearchController extends Controller
         return redirect("/search?keyword=$keyword");
     }
 
+    public function generalCrimePlaceDelete(Request $request, $id, $keyword)
+    {
+        $currentUser = Auth::id();
+        $placeDelete = CrimePlace::where('id', $id)->first();
+        $placeDelete->deleted_by()->associate($currentUser);
+        $placeDelete->save();
+        $placeDelete->delete();
+        return redirect("/search?keyword=$keyword");
+    }
 
 
 }

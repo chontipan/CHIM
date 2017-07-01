@@ -14,11 +14,15 @@ class PlaceGeneral extends Model
 
         "name","address","province","district",
         "tel","owner_name","owner_age","owner_identity",
-        "owner_address_identity","manager_name","manager_age",
+        "owner_address_identity",
+        "owner_address_tel",
+        "owner_current_address","owner_current_address_tel",
+
+        "manager_name","manager_age",
         "manager_identity","manager_address_identity",
         "manager_address_tel","manager_current_address",
         "manager_current_address_tel","place_desc","place_event",
-        "place_note","user_deleted","user_created","lat","lng"
+        "place_note","user_deleted","user_created","lat","lng",'time_at'
 
    ];
 

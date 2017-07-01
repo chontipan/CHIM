@@ -55,13 +55,13 @@
                                 <tbody>
                                 @foreach($persons as $person)
                                     <tr>
-                                        <td>{{$person->created_at}}</td>
+                                        <td>{{$person->time_at}}</td>
 
                                         <td>{{$person->fullname}}</td>
                                         <td>{{$person->identity}}</td>
 
                                         <td>
-                                            <a href="/person/pdf_announce/{{$person->id}}"  target="_blank" class="btn btn-primary">Short-Pdf</a>
+                                            <a href="/person/pdf_announce/{{$person->id}}"  target="_blank" class="btn btn-warning">Short-Pdf</a>
                                             <a href="/person/pdf/{{$person->id}}"  target="_blank" class="btn btn-success">Full-Pdf</a>
 
                                             <button onclick="deletePerson({{$person->id}})" type="button"

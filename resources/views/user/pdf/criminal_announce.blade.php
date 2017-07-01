@@ -25,29 +25,26 @@
 
 <htmlpagefooter name="page-footer">
     <?php
-    \Carbon\Carbon::setLocale('th');
-    setlocale(LC_TIME,'th_TH');
-    $date = \Carbon\Carbon::now();
-    $daymonth = $date->formatLocalized('%d/%m/');
-    $year = $date->year+543;
+    $user = Auth::user();
+
     ?>
 
     <table width='100%' style='vertical-align: bottom; font-family: garuda; font-size: 8pt; color: #000000;  font-style: italic;'><tr>
 
-            <td width='100%' style='text-align: right;'>พิมพ์เมื่อ {{$daymonth}}{{$year}}</td>
+            <td width='100%' style='text-align: right;'>พิมพ์โดย {{$user->name}} พิมพ์เมื่อ {{$criminal->time}}</td>
 
         </tr></table>
 </htmlpagefooter>
 
-<div class="row" style="text-align: center">
-    <h3>รูปถ่ายบุคคลที่เกี่ยวข้องกับอาชญากรรม</h3>
+<div class="row">
+    <h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;รูปถ่ายบุคคลที่เกี่ยวข้องกับอาชญากรรม</h3>
 
 </div>
-<div class="row" style="text-align: center">
+<div class="row" >
                 <?php if($criminal->pic_path != null) :  ?>
-                <img src="{{$public_path}}/{{$criminal->pic_path}}" width="400" height="400">
+                <img src="{{$public_path}}/{{$criminal->pic_path}}" width="600" height="400">
                 <?php else : ?>
-                <img src="{{$public_path}}/uploads/images/square-image.png}}" width="400" height="400">
+                <img src="{{$public_path}}/uploads/images/square-image.png}}" width="600" height="400">
                 <?php endif ?>
 
 </div>

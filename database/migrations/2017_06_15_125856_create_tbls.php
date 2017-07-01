@@ -16,9 +16,10 @@ class CreateTbls extends Migration
 
         Schema::create('persons', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('fullname');
+            $table->string('fullname')->nullable();
             $table->string('identity')->nullable();
             $table->string('pic_path')->nullable();
+            $table->text('time_at')->nullable();
             $table->integer('user_deleted')->nullable()->unsigned();
             $table->integer('user_created')->nullable()->unsigned();
             $table->softDeletes();

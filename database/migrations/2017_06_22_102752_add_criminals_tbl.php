@@ -16,7 +16,7 @@ class AddCriminalsTbl extends Migration
         Schema::create('criminals', function (Blueprint $table) {
             $table->increments('id');
             $table->text('type_person')->nullable();
-            $table->string('fullname');
+            $table->string('fullname')->nullable();
             $table->string('pic_path')->nullable();
             $table->text('age')->nullable();
             $table->text('nickname1')->nullable();
@@ -27,6 +27,7 @@ class AddCriminalsTbl extends Migration
             $table->text('current_address_tel')->nullable();
             $table->string('origin_address')->nullable();
             $table->text('origin_address_tel')->nullable();
+            $table->text('time_at')->nullable();
 
 
             $table->text('job')->nullable();

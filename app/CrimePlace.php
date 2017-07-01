@@ -18,7 +18,10 @@ class CrimePlace extends Model
         "manager_identity","manager_address_identity",
         "manager_address_tel","manager_current_address",
         "manager_current_address_tel","place_desc","place_event",
-        "place_note","user_deleted","user_created","place_crime_desc","lat","lng"
+        "place_note","user_deleted","user_created","place_crime_desc","lat","lng",
+        "owner_address_identity",
+        "owner_address_tel",
+        "owner_current_address","owner_current_address_tel",'time_at'
 
    ];
 

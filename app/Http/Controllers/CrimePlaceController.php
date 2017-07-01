@@ -35,7 +35,7 @@ class CrimePlaceController extends Controller
 
             $keyword = $request->get('keyword');
 
-            $places = DB::table('general_places')
+            $places = DB::table('crime_places')
                 ->Where('name', 'like', "%$keyword%")
                 ->orWhere('owner_name', 'like', "%$keyword%")
                 ->orWhere('owner_identity', 'like', "%$keyword%")
@@ -47,19 +47,19 @@ class CrimePlaceController extends Controller
                 ->paginate(20);
             //return $persons;
 
-            return view('user.place.index')
+            return view('user.crime_place.index')
                 ->with('places', $places)
                 ->with('keyword', $keyword);
         }else {
 
-            $places = PlaceGeneral::orderBy('created_at', 'desc')
+            $places = CrimePlace::orderBy('created_at', 'desc')
                 ->paginate(20);
 
-            $all = PlaceGeneral::count();
+           // $all = CrimePlace::count();
             //return $persons;
-            return view('user.place.index')
+            return view('user.crime_place.index')
                 ->with('places', $places)
-                ->with('all', $all)
+                //->with('all', $all)
                 ->with('keyword', $keyword);
         }
 
@@ -67,25 +67,47 @@ class CrimePlaceController extends Controller
 
     public function create(Request $request)
     {
-        return view('user.place.crime_place');
+        return view('user.crime_place.create');
     }
 
     public function postCreate(Request $request)
     {
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('-%d-%m');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized(' %H:%M:%S');
+        $date = "$year$daymonth$hour";
 
-
-        $currentUser = Auth::id();
+        $form = $request->get('place');
         $newPlace = new CrimePlace();
-        $newPlace->fill($request->all());
 
+        $newPlace->fill($form);
+        $currentUser = Auth::id();
 
+        $newPlace->created_by()->associate($currentUser);
+        $newPlace->time_at = $date;
+        $newPlace->save();
+        return redirect("/crime_place");
+        //$lastInsertedId = $newPlace->id;
+
+       // return redirect("/crime_place/$lastInsertedId/map");
+       // $fill = $request->all();
+    //    $fill = $request->get('place');
+     //   $location = $request->get('marker');
+     //   $currentUser = Auth::id();
+    //    $newPlace = new CrimePlace();
+     //   $newPlace->fill($fill);
+    //    $newPlace->fill($location);
         //$newPlace->fill($form);
         //$currentUser = Auth::id();
 
-        $newPlace->created_by()->associate($currentUser);
+    //    $newPlace->created_by()->associate($currentUser);
 
-        $newPlace->save();
-        return $newPlace;
+     //   $newPlace->save();
+    //    return $newPlace;
         //$lastInsertedId = $newPlace->id;
         //return redirect("/general_place/$lastInsertedId/map");
         //return redirect("/general_place/$lastInsertedId/map");
@@ -93,23 +115,24 @@ class CrimePlaceController extends Controller
     public function postDelete(Request $request, $id)
     {
         $currentUser = Auth::id();
-        $placeDel = PlaceGeneral::where('id', $id)->first();
+        $placeDel = CrimePlace::where('id', $id)->first();
         $placeDel->deleted_by()->associate($currentUser);
         $placeDel->save();
         $placeDel->delete();
-        return redirect('/general_place');
+        return redirect('/crime_place');
+
     }
 
     public function map()
     {
-        $locations = PlaceGeneral::all();
-        return view('user.place.map', compact('locations'));
+        $locations = CrimePlace::all();
+        return view('user.crime_place.map', compact('locations'));
     }
 
     public function addMap(Request $request, $id)
     {
-        $place = PlaceGeneral::where('id', $id)->first();
-        return view('user.place.addmap')
+        $place = CrimePlace::where('id', $id)->first();
+        return view('user.crime_place.addmap')
             ->with('place', $place);
     }
     public function postAddMap(Request $request, $id)
@@ -117,7 +140,7 @@ class CrimePlaceController extends Controller
         $lat = $request->get('lat');
         $lng = $request->get('lng');
 
-        $placeMap = PlaceGeneral::where('id', $id)->first();
+        $placeMap = CrimePlace::where('id', $id)->first();
         $placeMap->lat = $lat;
         $placeMap->lng = $lng;
         $placeMap->save();
@@ -126,7 +149,7 @@ class CrimePlaceController extends Controller
 
 
 
-        return redirect('/general_place');
+        return redirect('/crime_place');
     }
 
 

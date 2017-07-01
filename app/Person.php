@@ -31,7 +31,7 @@ class Person extends Model
     'family_member3_job','family_member3_workplace','family_member3_workplace_tel',
     'family_member3_address','employee1_name','employee1_age','employee1_identity',
     'employee1_address','employee2_name','employee2_age','employee2_identity',
-    'employee2_address','others','user_created'
+    'employee2_address','others','user_created','time_at'
 
    ];
 

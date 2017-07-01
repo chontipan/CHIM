@@ -37,7 +37,7 @@ class AddPlaceTbl extends Migration
             $table->text('place_desc')->nullable();
             $table->text('place_event')->nullable();
             $table->text('place_note')->nullable();
-
+            $table->text('time_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
 

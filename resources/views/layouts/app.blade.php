@@ -11,8 +11,8 @@
     <title>{{ config('app.name', 'CHIM') }}</title>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyB1tI29Od4wKgtIrTGWkMd9FLY_8mMXahI&libraries=places"></script>
 
-
     <script src="{{ asset('js/gmaps.js') }}"></script>
+
     <!-- Styles -->
 <style>
     #map {
@@ -22,7 +22,7 @@
     }
     #mymap {
 
-        width: 800px;
+        width: 1200px;
         height: 500px;
         padding-top: 1em;
     }
@@ -84,6 +84,8 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        <a href="/{{Auth::user()->id}}/edit">แก้ไขข้อมูลส่วนตัว
+                                        </a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -111,6 +113,8 @@
         <p align="center">CHIM (Criminal History Information System) 2017</p>
     </div>
     <!-- Scripts -->
+   {{-- <script src="{{ asset('js/vue.js') }}"></script> }}
+    {{--<script src="https://unpkg.com/vue"></script>--}}
     <script src="{{ asset('js/app.js') }}"></script>
 @yield("javascript")
 </body>

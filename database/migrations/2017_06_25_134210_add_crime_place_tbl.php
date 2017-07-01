@@ -26,7 +26,7 @@ class AddCrimePlaceTbl extends Migration
             $table->text('owner_age')->nullable();
             $table->text('owner_identity')->nullable();
             $table->string('owner_address_identity')->nullable();
-
+            $table->text('time_at')->nullable();
             $table->text('manager_name')->nullable();
             $table->text('manager_age')->nullable();
             $table->text('manager_identity')->nullable();

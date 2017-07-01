@@ -54,13 +54,13 @@
                                 <tbody>
                                 @foreach($criminals as $criminal)
                                     <tr>
-                                        <td>{{$criminal->created_at}}</td>
+                                        <td>{{$criminal->time_at}}</td>
 
                                         <td>{{$criminal->fullname}}</td>
                                         <td>{{$criminal->identity}}</td>
 
                                         <td>
-                                            <a href="/criminal/pdf_announce/{{$criminal->id}}"  target="_blank" class="btn btn-primary">Short-Pdf</a>
+                                            <a href="/criminal/pdf_announce/{{$criminal->id}}"  target="_blank" class="btn btn-warning">Short-Pdf</a>
                                             <a href="/criminal/pdf/{{$criminal->id}}"  target="_blank" class="btn btn-success">Full-Pdf</a>
 
                                             <button onclick="deletecriminal({{$criminal->id}})" type="button"

@@ -4,7 +4,7 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <a href="/home">หน้าหลัก</a>/สถานที่ทั่วไป
+            <a href="/home">หน้าหลัก</a>/สถานที่ที่เกี่ยวข้องกับอาชญากรรม
 
         </section>
 
@@ -12,13 +12,13 @@
         <section class="content">
             <div class="row" style="padding-top: 1em">
                 <div class="col-md-12">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">สถานที่ทั่วไป</div>
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">สถานที่ที่เกี่ยวข้องกับอาชญากรรม</div>
 
                         <div class="panel-body">
                         <!-- /.box-header -->
 
-                            <form class="form-horizontal" method="get" action="/general_place">
+                            <form class="form-horizontal" method="get" action="/crime_place">
                             <div class="input-group input-group-md" style="width: 600px;">
                                 <input type="text" name="keyword" class="form-control pull-right"
                                        placeholder="กรอกชื่อสถานที่ ชื่อ/หมายเลขบัตรประจำตัวประชาชน อำเภอที่ตั้ง จังหวัดที่ตั้ง" value={{$keyword}}>
@@ -31,13 +31,13 @@
                             </form>
 
                             <div class="pull-right">
-                            <a href="/general_place/create" class="btn btn-primary">
-                                เพิ่มประวัติสถานที่ทั่วไป
+                            <a href="/crime_place/create" class="btn btn-primary">
+                                เพิ่มประวัติสถานที่ที่เกี่ยวข้องกับอาชญากรรม
                             </a>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    จำนวนสถานที่ทั่วไปทั้งหมด {{ $places->total() }} สถานที่
+                                    จำนวนสถานที่ที่เกี่ยวข้องกับอาชญากรรมทั้งหมด {{ $places->total() }} สถานที่
                                 </div>
                             </div>
                             <table class="table table-striped">
@@ -66,8 +66,8 @@
                                         <td>{{$place->manager_name}}</td>
 
                                         <td>
-                                            <a href="/general_place/pdf_announce/{{$place->id}}"  target="_blank" class="btn btn-warning">Short-Pdf</a>
-                                            <a href="/general_place/pdf/{{$place->id}}"  target="_blank" class="btn btn-success">Full-Pdf</a>
+                                            <a href="/crime_place/pdf_announce/{{$place->id}}"  target="_blank" class="btn btn-warning">Short-Pdf</a>
+                                            <a href="/crime_place/pdf/{{$place->id}}"  target="_blank" class="btn btn-success">Full-Pdf</a>
                                             <button onclick="deletePlace({{$place->id}})" type="button"
                                                     class="btn btn-danger">ลบ
                                             </button>
@@ -84,7 +84,7 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    จำนวนสถานที่ทั่วไปในหน้านี้ {{ $places->count() }} สถานที่
+                                    จำนวนสถานที่ที่เกี่ยวข้องกับอาชญากรรมในหน้านี้ {{ $places->count() }} สถานที่
                                 </div>
                             </div>
                             <div class="row">
@@ -114,7 +114,7 @@
       function deletePlace(id) {
           if(confirm("คุณต้องการเป็นผู้ลบประวัติสถานที่นี้?")){
               var form = document.getElementById('deletePlace');
-              form.setAttribute('action',"/general_place/"+id+"/delete")
+              form.setAttribute('action',"/crime_place/"+id+"/delete")
               form.submit()
           }
       }

@@ -37,7 +37,7 @@
 </htmlpagefooter>
 
 <div class="row" style="text-align: center">
-    <h3>แผนที่สังเขปสถานที่ทั่วไป</h3>
+    <h3>แผนที่สังเขปสถานที่ที่เกี่ยวข้องกับอาชญากรรม</h3>
 
 </div>
 <div class="row" style="padding-top: 2em">
@@ -69,7 +69,7 @@
     </table>
 
 </div>
-<div class="row" id="map" style="padding-top: 2em">
+<div class="row" id="map" style=" padding-top: 2em">
 <img src="http://maps.googleapis.com/maps/api/staticmap?center={{$place->lat}},{{$place->lng}}&zoom=16&size=800x500&markers=color:red%7C{{$place->lat}},{{$place->lng}}&key=AIzaSyBQUWojCfpRqjw_0SV9WPKac6R8_GRaFYk">
 
 </div>
