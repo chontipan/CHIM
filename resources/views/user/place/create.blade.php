@@ -321,9 +321,9 @@
                             </div>
                             <div class="row">
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">ระบุพิกัด</label>
+                                    <label class="col-md-3 control-label">ระบุพิกัดเพื่อปักหมุดในแผนที่</label>
                                     <div class="col-md-5">
-                                    <input id="pac-input" class="form-control input-md" type="text" placeholder="กรอกชื่ออำเภอ หรือ จังหวัด">
+                                    <input id="pac-input" class="form-control input-md" type="text" placeholder="กรอกชื่อสถานที่ อำเภอ หรือ จังหวัด">
                                     </div>
                                 </div>
                             </div>
