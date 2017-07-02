@@ -33,7 +33,8 @@ return array(
     *     - timestamp: use uploaded timestamp as filename
     *     - custom: user must provide new name, if not will use original filename
     */
-  'newfilename' => 'original',
+
+  'newfilename' => 'hash',
 
   /*
    * Sizes, used to crop and create multiple size.

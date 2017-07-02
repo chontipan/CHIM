@@ -79,10 +79,15 @@ class PersonController extends Controller
 
 
         if($request->hasFile('pic_path')) {
+
+
             $result = ImageuploadFacade::upload($request->file('pic_path'));
+
             $dimension = $result['dimensions'];
             $size400 = $dimension['size400'];
+
             $file_path = $size400['filedir'];
+
         }
 
         $form = $request->get('person');
