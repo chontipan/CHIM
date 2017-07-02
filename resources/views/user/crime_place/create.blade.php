@@ -357,8 +357,8 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Latitude (ละติจูด)</label>
                                             <div class="col-md-4">
-                                                <input required type="text" class="form-control input-md" id="lat"
-                                                       name="place[lat]">
+                                                <input required readonly type="text" class="form-control input-md" id="lat"
+                                                       name="place[lat]" value="20.430461">
                                             </div>
                                         </div>
                                     </div>
@@ -366,8 +366,8 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Longitude (ลองจิจูด)</label>
                                             <div class="col-md-4">
-                                                <input required type="text" class="form-control input-md" id="lng"
-                                                       name="place[lng]">
+                                                <input required readonly type="text" class="form-control input-md" id="lng"
+                                                       name="place[lng]" value="99.884723">
                                             </div>
                                         </div>
                                     </div>

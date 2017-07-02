@@ -31,6 +31,7 @@ class PersonController extends Controller
     {
         $keyword = $request->get('keyword');
         //return $request;
+
         if ($keyword) {
 
             $keyword = $request->get('keyword');
@@ -43,7 +44,8 @@ class PersonController extends Controller
 
             return view('user.person.index')
                 ->with('persons', $persons)
-                ->with('keyword', $keyword);
+                ->with('keyword', $keyword)
+              ;
         }else {
 
             $persons = Person::orderBy('created_at', 'desc')
@@ -55,7 +57,8 @@ class PersonController extends Controller
             return view('user.person.index')
                 ->with('persons', $persons)
                 ->with('keyword', $keyword)
-                ->with('all', $all);
+                ;
+                //->with('all', $all);
         }
 
     }
@@ -105,6 +108,7 @@ class PersonController extends Controller
 
         $newPerson->save();
 
+
      /*   if($newPerson->identity){
             return redirect("/afterSave/$newPerson->fullname/$newPerson->identity");
 
@@ -115,7 +119,8 @@ class PersonController extends Controller
 
 */
 
-        return redirect('/person');
+        return redirect('/person')
+           ;
     }
     public function postDelete(Request $request, $id)
     {
