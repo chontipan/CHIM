@@ -17,7 +17,20 @@
 
                         <div class="panel-body">
                         <!-- /.box-header -->
+                            <div class="row" style="padding-top: 1em">
+                                <div class="col-md-12">
+                                    @if (Session::has('msg')=="บันทึกบุคคลทั่วไปสำเร็จ"||Session::has('msg')=="ลบบุคคลทั่วไปสำเร็จ")
+                                        <div class="alert alert-success">
+                                            <ul>
 
+                                                <li>{{ Session::get('msg') }}</li>
+
+                                            </ul>
+                                        </div>
+
+                                    @endif
+                                </div>
+                            </div>
                             <form class="form-horizontal" method="get" action="/person">
                             <div class="input-group input-group-sm" style="width: 300px;">
                                 <input type="text" name="keyword" class="form-control pull-right"

@@ -17,7 +17,20 @@
 
                         <div class="panel-body">
                         <!-- /.box-header -->
+                            <div class="row" style="padding-top: 1em">
+                                <div class="col-md-12">
+                                    @if (Session::has('msg')=="บันทึกสถานที่ที่เกี่ยวกับอาชญากรรมสำเร็จ"||Session::has('msg')=="ลบสถานที่ที่เกี่ยวกับอาชญากรรมสำเร็จ")
+                                        <div class="alert alert-success">
+                                            <ul>
 
+                                                <li>{{ Session::get('msg') }}</li>
+
+                                            </ul>
+                                        </div>
+
+                                    @endif
+                                </div>
+                            </div>
                             <form class="form-horizontal" method="get" action="/crime_place">
                             <div class="input-group input-group-md" style="width: 600px;">
                                 <input type="text" name="keyword" class="form-control pull-right"

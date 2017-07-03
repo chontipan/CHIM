@@ -17,7 +17,19 @@
 
                         <div class="panel-body">
                         <!-- /.box-header -->
+                            <div class="row" style="padding-top: 1em">
+                                <div class="col-md-12">
+                                    @if (Session::has('msg')=="บันทึกสถานที่ทั่วไปสำเร็จ"||Session::has('msg')=="ลบสถานที่ทั่วไปสำเร็จ")
+                                        <div class="alert alert-success">
+                                            <ul>
 
+                                                <li>{{ Session::get('msg') }}</li>
+
+                                            </ul>
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
                             <form class="form-horizontal" method="get" action="/general_place">
                             <div class="input-group input-group-md" style="width: 600px;">
                                 <input type="text" name="keyword" class="form-control pull-right"
@@ -35,16 +47,6 @@
                                 เพิ่มประวัติสถานที่ทั่วไป
                             </a>
                             </div>
-
-                            @if (Session::has('msg'))
-                                <div class="alert alert-danger">
-                                    <ul>
-
-                                            <li>{{ Session::get('msg') }}</li>
-
-                                    </ul>
-                                </div>
-                            @endif
 
                             <div class="row">
                                 <div class="col-md-12">

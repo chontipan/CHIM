@@ -59,7 +59,7 @@ class GeneralPlaceController extends Controller
             //return $persons;
             return view('user.place.index')
                 ->with('places', $places)
-                ->with('all', $all)
+
                 ->with('keyword', $keyword);
         }
 
@@ -89,7 +89,14 @@ class GeneralPlaceController extends Controller
 
         $newPlace->created_by()->associate($currentUser);
         $newPlace->time_at = $date;
+
+
         $newPlace->save();
+            $request->session()->flash('msg',"บันทึกสถานที่ทั่วไปสำเร็จ");
+
+
+
+
         return redirect("/general_place");
        // $lastInsertedId = $newPlace->id;
 
@@ -102,7 +109,10 @@ class GeneralPlaceController extends Controller
         $placeDel->deleted_by()->associate($currentUser);
         $placeDel->save();
         $placeDel->delete();
-        $request->session()->flash('msg',"delete success");
+        $request->session()->flash('msg',"ลบสถานที่ทั่วไปสำเร็จ");
+
+
+
         return redirect('/general_place');
 
     }

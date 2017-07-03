@@ -106,7 +106,11 @@ class PersonController extends Controller
         $newPerson->created_by()->associate($currentUser);
         $newPerson->time_at = $date;
 
+
+
         $newPerson->save();
+        $request->session()->flash('msg',"บันทึกบุคคลทั่วไปสำเร็จ");
+       
 
 
      /*   if($newPerson->identity){
@@ -128,7 +132,12 @@ class PersonController extends Controller
         $personDelete = Person::where('id', $id)->first();
         $personDelete->deleted_by()->associate($currentUser);
         $personDelete->save();
+
+
+
         $personDelete->delete();
+            $request->session()->flash('msg',"ลบบุคคลทั่วไปสำเร็จ");
+
         return redirect('/person');
     }
 }

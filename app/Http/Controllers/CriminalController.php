@@ -53,7 +53,7 @@ class CriminalController extends Controller
             $all=Criminal::count();
             return view('user.criminal.index')
                 ->with('criminals', $criminals)
-                ->with('all', $all)
+                //->with('all', $all)
                 ->with('keyword', $keyword);
         }
 
@@ -96,7 +96,14 @@ class CriminalController extends Controller
 
         $newCriminal->created_by()->associate($currentUser);
         $newCriminal->time_at = $date;
+
+
+
+
         $newCriminal->save();
+            $request->session()->flash('msg',"บันทึกบุคคลที่เกี่ยวกับอาชญากรรมสำเร็จ");
+
+
         return redirect('/criminal');
 
 
@@ -108,7 +115,15 @@ class CriminalController extends Controller
         $criminalDelete = Criminal::where('id', $id)->first();
         $criminalDelete->deleted_by()->associate($currentUser);
         $criminalDelete->save();
-        $criminalDelete->delete();
+
+
+      $criminalDelete->delete();
+            $request->session()->flash('msg',"ลบบุคคลที่เกี่ยวกับอาชญากรรมสำเร็จ");
+
+
+
+
+
         return redirect('/criminal');
     }
 }

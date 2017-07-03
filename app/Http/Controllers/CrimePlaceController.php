@@ -89,7 +89,16 @@ class CrimePlaceController extends Controller
 
         $newPlace->created_by()->associate($currentUser);
         $newPlace->time_at = $date;
+       // $newPlace->save();
+
         $newPlace->save();
+        $request->session()->flash('msg',"บันทึกสถานที่ที่เกี่ยวกับอาชญากรรมสำเร็จ");
+
+
+
+
+
+
         return redirect("/crime_place");
         //$lastInsertedId = $newPlace->id;
 
@@ -118,7 +127,14 @@ class CrimePlaceController extends Controller
         $placeDel = CrimePlace::where('id', $id)->first();
         $placeDel->deleted_by()->associate($currentUser);
         $placeDel->save();
+        //$placeDel->delete();
+
+
         $placeDel->delete();
+        $request->session()->flash('msg',"ลบสถานที่ที่เกี่ยวกับอาชญากรรมสำเร็จ");
+
+
+
         return redirect('/crime_place');
 
     }
