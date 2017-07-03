@@ -55,7 +55,7 @@
 
         @if($person->identity)
 
-            <label><?php echo $person->identity ?> </label>
+            <label>{{$person->type_identity}} : {{$person->identity}} </label>
         @else
             {{$person->type_identity}} : <label> - </label>
         @endif

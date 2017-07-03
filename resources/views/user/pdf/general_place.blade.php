@@ -151,7 +151,7 @@
             @if($place->manager_age)
                 <td colspan="4">&nbsp;&nbsp;&nbsp;อายุ : <label><?php echo $place->manager_age ?> </label> ปี</td>
             @else
-                <td colspan="4">&nbsp;&nbsp;&nbsp; : <label> - </label> ปี</td>
+                <td colspan="4">&nbsp;&nbsp;&nbsp;อายุ : <label> - </label> ปี</td>
             @endif
 
         </tr>

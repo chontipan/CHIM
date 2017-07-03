@@ -55,7 +55,7 @@
 
             @if($criminal->identity)
 
-                    <label><?php echo $criminal->identity ?> </label>
+            <label>{{$criminal->type_identity}} : {{$criminal->identity}} </label>
             @else
                 {{$criminal->type_identity}} : <label> - </label>
             @endif
