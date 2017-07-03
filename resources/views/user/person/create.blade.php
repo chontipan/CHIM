@@ -1248,7 +1248,7 @@
                                 </div>
                             </div>
 
-
+                            <hr>
                             <div class="row">
 
                                 <div class="form-group">
@@ -1267,7 +1267,7 @@
                                 <input required  name="pic_path" type="file" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
                                 </div>
                             </div>
-
+                            <hr>
                                 <!-- /.box-body -->
                             <div class="row">
                                 <div class="form-group">

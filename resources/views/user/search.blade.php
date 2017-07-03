@@ -31,6 +31,7 @@
                 </div>
             </div>
             </div>
+            <hr>
                 <div class="row">
                 <div class="col-md-12">
 
@@ -104,7 +105,7 @@
                     </div>
 
                 </div>
-
+            <hr>
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-danger">
@@ -173,7 +174,7 @@
                 </div>
 
             </div>
-
+            <hr>
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-info">
@@ -246,7 +247,7 @@
                 </div>
 
             </div>
-
+            <hr>
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-warning">

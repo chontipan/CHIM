@@ -319,6 +319,7 @@
                                 </div>
 
                             </div>
+                            <hr>
                             <div class="row">
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">ระบุพิกัดเพื่อปักหมุดในแผนที่</label>
@@ -353,7 +354,7 @@
                                 </div>
                             </div>
 
-
+                            <hr>
                                 <!-- /.box-body -->
                             <div class="row">
                                 <div class="form-group">
