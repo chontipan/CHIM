@@ -35,6 +35,17 @@
                                 เพิ่มประวัติสถานที่ทั่วไป
                             </a>
                             </div>
+
+                            @if (Session::has('msg'))
+                                <div class="alert alert-danger">
+                                    <ul>
+
+                                            <li>{{ Session::get('msg') }}</li>
+
+                                    </ul>
+                                </div>
+                            @endif
+
                             <div class="row">
                                 <div class="col-md-12">
                                     จำนวนสถานที่ทั่วไปทั้งหมด {{ $places->total() }} สถานที่

@@ -102,7 +102,9 @@ class GeneralPlaceController extends Controller
         $placeDel->deleted_by()->associate($currentUser);
         $placeDel->save();
         $placeDel->delete();
+        $request->session()->flash('msg',"delete success");
         return redirect('/general_place');
+
     }
 
     public function map()
