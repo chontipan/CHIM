@@ -40,10 +40,10 @@
                         </div>
 -->
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">บัญชีผู้ใช้</label>
+                            <label for="email" class="col-md-4 control-label">บัญชีผู้ใช้ (Username)</label>
 
                             <div class="col-md-6">
-                                <input id="email" placeholder="บัญชีผู้ใช้ ใข้ในการเข้าสู่ระบบ" type="text" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="email" placeholder="บัญชีผู้ใช้ (Username) ที่ใข้ในการเข้าสู่ระบบ" type="text" class="form-control" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -55,7 +55,7 @@
 
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">รหัสผ่าน</label>
+                            <label for="password" class="col-md-4 control-label">รหัสผ่าน (Password)</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" placeholder="กรุณากรอกรหัสผ่าน" required>
@@ -72,7 +72,7 @@
                             <label for="password-confirm" class="col-md-4 control-label">ยืนยันรหัสผ่าน</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="กรุณากรอกสรหัสผ่านอีกครั้ง" required>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="กรุณากรอกรหัสผ่านอีกครั้ง" required>
                             </div>
                         </div>
 
