@@ -24,7 +24,7 @@
     #mymap {
 
         width: 1200px;
-        height: 500px;
+        height: 600px;
         padding-top: 1em;
     }
     #footer{

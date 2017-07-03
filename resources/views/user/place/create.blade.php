@@ -340,7 +340,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Latitude (ละติจูด)</label>
                                     <div class="col-md-4">
-                                        <input required readonly type="text" class="form-control input-md" id="lat" name="place[lat]" value="20.430461" >
+                                        <input required readonly type="text" class="form-control input-md" id="lat" name="place[lat]" value="20.274707" >
                                     </div>
                                 </div>
                             </div>
@@ -349,7 +349,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Longitude (ลองจิจูด)</label>
                                     <div class="col-md-4">
-                                        <input required readonly type="text" class="form-control input-md" id="lng" name="place[lng]" value="99.884723">
+                                        <input required readonly type="text" class="form-control input-md" id="lng" name="place[lng]" value="100.087872">
                                     </div>
                                 </div>
                             </div>
@@ -448,16 +448,16 @@
         var map = new google.maps.Map(document.getElementById('map-canvas'), {
             center: {
 
-                lat: 20.430461,
-                lng: 99.884723
+                lat: 20.274707,
+                lng: 100.087872
             },
             zoom: 15
         });
 
         var marker = new google.maps.Marker({
             position: {
-                lat: 20.430461,
-                lng: 99.884723
+                lat: 20.274707,
+                lng: 100.087872
             },
             map: map,
             draggable: true

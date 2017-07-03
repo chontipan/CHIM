@@ -25,10 +25,10 @@
 
         var mymap = new GMaps({
             el: '#mymap',
-            lat:  19.910874,
-            lng: 99.841089,
+            lat:  20.232534,
+            lng: 100.138436,
 
-            zoom:9
+            zoom:11
         });
 
         $.each( locations, function( index, value ){
