@@ -42,6 +42,7 @@
         padding-bottom: 50px;
         margin-bottom:50px;
     }
+
 </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 

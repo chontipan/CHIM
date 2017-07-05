@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Dashboard
+                    <div class="panel-heading" style="background-color: #ff8936; color: white">Dashboard
                         <div style="text-align: right" >
                         <form class="form-inline" method="get" style="display:inline; " action="/search">
                             <input required type="text" name="keyword" class="form-control input-sm"
