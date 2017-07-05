@@ -18,7 +18,7 @@
 
     #map {
         width: 800px;
-        height: 500px;
+        height: 400px;
         padding-top: 1em;
     }
     #mymap {
