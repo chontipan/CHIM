@@ -10,7 +10,15 @@
 
         <!-- Main content -->
         <section class="content">
-            <div style=" padding-top: 2em" id="mymap"></div>
+            <div style="padding-top: 1em">
+            <div class="panel panel-warning">
+                <div class="panel-heading">แผนที่สถานที่ที่เกี่ยวข้องกับอาชญากรรม</div>
+
+                <div class="panel-body">
+            <div  id="mymap"></div>
+                </div>
+            </div>
+            </div>
         </section>
         <!-- /.content -->
 

@@ -23,12 +23,12 @@
     }
     #mymap {
 
-        width: 1200px;
-        height: 600px;
+        width: 1100px;
+        height: 420px;
         padding-top: 1em;
     }
     #footer{
-        padding-top: 1em;
+
         position:fixed;
         height:50px;
         background-color:white;
