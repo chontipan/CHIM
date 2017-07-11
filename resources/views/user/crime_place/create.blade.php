@@ -27,7 +27,7 @@
 
                                 <div class="row">
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">1.ชื่อสถานที่</label>
+                                        <label class="col-md-3 control-label">1.ชื่อสถานที่(*)</label>
                                         <div class="col-md-4">
                                             <input required type="text"
                                                    id="keyword_place_name"

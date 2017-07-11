@@ -37,7 +37,7 @@
 
                                 <div class="row">
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">1. ชื่อ-ชื่อสกุล</label>
+                                            <label class="col-sm-2 control-label">1. ชื่อ-ชื่อสกุล(*)</label>
                                             <div class="col-sm-4">
                                                 <input required type="text"
                                                        id="keyword_name"
@@ -1090,7 +1090,7 @@
                             <div class="row">
 
                                 <div class="form-group">
-                                    <label style="text-align: left" class="col-md-4 control-label"  onchange="readURL(this);">&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;อัพโหลดรูปประจำตัว</label>
+                                    <label style="text-align: left" class="col-md-4 control-label"  onchange="readURL(this);">&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;อัพโหลดรูปประจำตัว(*)</label>
 
                                 <div class="col-md-4">
                                     <img id="blah" alt="กรุณาอัพโหลดรูป" width="150" height="150" />
