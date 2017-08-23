@@ -285,6 +285,51 @@
 
     </tr>
 
+
+
+    <tr>
+        <td>ภาพประกอบ</td>
+    </tr>
+    <tr>
+        <td align="center" >
+            <?php if($place->pic_path1 != null) :  ?>
+            <img src="{{$public_path}}/{{$place->pic_path1}}" width="400" height="400">
+            <?php endif ?>
+
+        </td>
+    </tr>
+    <tr>
+        @if($place->pic1_desc)
+            <td >&nbsp;&nbsp;&nbsp;คำอธิบายภาพ : <label><?php echo $place->pic1_desc ?></label></td>
+        @endif
+    </tr>
+    <tr>
+        <td align="center" >
+            <?php if($place->pic_path2 != null) :  ?>
+            <img src="{{$public_path}}/{{$place->pic_path2}}" width="400" height="400">
+            <?php endif ?>
+
+        </td>
+    </tr>
+    <tr>
+        @if($place->pic2_desc)
+            <td >&nbsp;&nbsp;&nbsp;คำอธิบายภาพ : <label><?php echo $place->pic2_desc ?></label></td>
+        @endif
+    </tr>
+    <tr>
+        <td align="center" >
+            <?php if($place->pic_path3 != null) :  ?>
+            <img src="{{$public_path}}/{{$place->pic_path3}}" width="400" height="400">
+            <?php endif ?>
+
+        </td>
+    </tr>
+    <tr>
+        @if($place->pic3_desc)
+            <td >&nbsp;&nbsp;&nbsp;คำอธิบายภาพ : <label><?php echo $place->pic3_desc ?></label></td>
+        @endif
+    </tr>
+
 </table>
 
 

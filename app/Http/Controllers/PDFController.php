@@ -193,12 +193,80 @@ class PDFController extends Controller
 
 
 
-        $pdf = Pdf::loadView('user.pdf.general_place', ["place"=>$place]);
+        $pdf = Pdf::loadView('user.pdf.general_place', ["place"=>$place,"public_path"=>public_path()]);
 
 
         $file_name= "$place->name-$place->time";
         return $pdf->stream("$file_name.pdf");
     }
+
+
+    public function pdfGeneralPlacePics($id)
+    {
+        $place = PlaceGeneral::where('id', $id)->first();
+
+
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized('-%H:%M:%S');
+
+
+        // $t=time();
+        //$place->time = date("d/m/Y",$t);
+        $place->time = "$daymonth$year$hour";
+
+
+
+        // $pdf = app('dompdf.wrapper');
+        // $pdf->loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
+        //return $pdf->stream();
+
+
+
+        $pdf = Pdf::loadView('user.pdf.place_pic', ["place"=>$place,"public_path"=>public_path()]);
+
+
+        $file_name= "$place->name-$place->time";
+        return $pdf->stream("$file_name.pdf");
+    }
+
+    public function pdfCrimePlacePics($id)
+    {
+        $place = CrimePlace::where('id', $id)->first();
+
+
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+        $date = $date->addHour(7);
+        $hour = $date->formatLocalized('-%H:%M:%S');
+
+
+        // $t=time();
+        //$place->time = date("d/m/Y",$t);
+        $place->time = "$daymonth$year$hour";
+
+
+
+        // $pdf = app('dompdf.wrapper');
+        // $pdf->loadView('user.pdf.person', ["person"=>$person,"public_path"=>public_path()]);
+        //return $pdf->stream();
+
+
+
+        $pdf = Pdf::loadView('user.pdf.place_pic', ["place"=>$place,"public_path"=>public_path()]);
+
+
+        $file_name= "$place->name-$place->time";
+        return $pdf->stream("$file_name.pdf");
+    }
+
 
     public function pdfGeneralPlaceAnnounce($id)
     {
@@ -223,8 +291,7 @@ class PDFController extends Controller
       //  return view('user.pdf.general_place')
       //      ->with('place',$place);
 
-        $pdf = Pdf::loadView('user.pdf.general_place_announce', ["place"=>$place]);
-
+        $pdf = Pdf::loadView('user.pdf.general_place_announce', ["place"=>$place,"public_path"=>public_path()]);
         $file_name= "$place->name-$place->time";
         return $pdf->stream("$file_name.pdf");
 

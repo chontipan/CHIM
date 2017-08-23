@@ -337,7 +337,7 @@
                                     &nbsp;&nbsp;&nbsp;<img id="pic1" width="150" height="150" />
                                 </div>
                                 <div class="form-group col-md-2" align="center">
-                                    <input required  name="place[pic_path1]" type="file" onchange="document.getElementById('pic1').src = window.URL.createObjectURL(this.files[0])">
+                                    <input required  name="pic_path1" type="file" onchange="document.getElementById('pic1').src = window.URL.createObjectURL(this.files[0])">
                                 </div>
                                 <label  class="col-md-2 control-label">
                                     คำอธิบายรูปสถานที่ 1</label>
@@ -354,7 +354,7 @@
                                     &nbsp;&nbsp;&nbsp;<img id="pic2" width="150" height="150" />
                                 </div>
                                 <div class="form-group col-md-2" align="center">
-                                    <input name="place[pic_path2]" type="file" onchange="document.getElementById('pic2').src = window.URL.createObjectURL(this.files[0])">
+                                    <input name="pic_path2" type="file" onchange="document.getElementById('pic2').src = window.URL.createObjectURL(this.files[0])">
                                 </div>
                                 <label  class="col-md-2 control-label">
                                     คำอธิบายรูปสถานที่ 2</label>
@@ -371,7 +371,7 @@
                                     &nbsp;&nbsp;&nbsp;<img id="pic3" width="150" height="150" />
                                 </div>
                                 <div class="form-group col-md-2" align="center">
-                                    <input name="place[pic_path3]" type="file" onchange="document.getElementById('pic3').src = window.URL.createObjectURL(this.files[0])">
+                                    <input name="pic_path3" type="file" onchange="document.getElementById('pic3').src = window.URL.createObjectURL(this.files[0])">
                                 </div>
                                 <label  class="col-md-2 control-label">
                                     คำอธิบายรูปสถานที่ 3</label>

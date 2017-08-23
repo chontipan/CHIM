@@ -56,7 +56,7 @@ Route::post('/general_place/{id}/map/create', "GeneralPlaceController@postAddMap
 Route::get('/general_place/pdf/{id}', "PDFController@pdfGeneralPlace");
 Route::get('/general_place/pdf_announce/{id}', "PDFController@pdfGeneralPlaceAnnounce");
 Route::get('/general_place/map', 'GeneralPlaceController@map');
-
+Route::get('/general_place/pics/pdf/{id}', "PDFController@pdfGeneralPlacePics");
 
 Route::get('/crime_place', "CrimePlaceController@index");
 Route::get('/crime_place/create', "CrimePlaceController@create");
@@ -67,6 +67,7 @@ Route::get('/crime_place/{id}/map', "CrimePlaceController@addMap");
 Route::post('/crime_place/{id}/map/create', "CrimePlaceController@postAddMap");
 Route::get('/crime_place/pdf/{id}', "PDFController@pdfCrimePlace");
 Route::get('/crime_place/pdf_announce/{id}', "PDFController@pdfCrimePlaceAnnounce");
+Route::get('/crime_place/pics/pdf/{id}', "PDFController@pdfCrimePlacePics");
 
 
 Route::get('/criminal', "CriminalController@index");

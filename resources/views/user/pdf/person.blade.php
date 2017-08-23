@@ -23,7 +23,7 @@
     <table width="100%" style="vertical-align: bottom; font-family: TH SarabunPSK; font-size: 14pt; color: #000000;  "><tr>
             <td width="20%"></td>
             <td width="30%" style="text-align: right; ">หน้า {PAGENO}</td>
-            <td width="55%" style="text-align: right; "> ลำดับที่</td>
+            <td width="55%" style="text-align: right; "> ลำดับที่  </td>
         </tr></table>
 
 </htmlpageheader>
