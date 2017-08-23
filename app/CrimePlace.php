@@ -23,6 +23,8 @@ class CrimePlace extends Model
         "owner_address_tel",
         "owner_current_address","owner_current_address_tel",'time_at'
 
+        ,"pic_path1","pic_path2","pic_path3","pic1_desc","pic2_desc","pic3_desc"
+
    ];
 
 

@@ -134,6 +134,15 @@
             @endif
 
         </tr>
+        <tr>
+
+            @if($person->nationality)
+                <td colspan="4">&nbsp;&nbsp;&nbsp;สัญชาติ : <label><?php echo $person->nationality ?> </label></td>
+            @else
+                <td colspan="4">&nbsp;&nbsp;&nbsp;สัญชาติ : <label> - </label></td>
+            @endif
+
+        </tr>
 
 
 

@@ -22,7 +22,7 @@ class Criminal extends Model
         'child_address','child_address_tel',
     'child_tel','height','shape','teeth','skin','hair','head','face','eyebrow','eye','ear','nose','mouse',
         'chin','beard','scar','pronunciation','noteable','behavior','favor_place','previous_crime',
-        'weapon','vehicle','crime_related','crime_desc','others','time_at'
+        'weapon','vehicle','crime_related','crime_desc','others','time_at',"nationality"
 
 
    ];

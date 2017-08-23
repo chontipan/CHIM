@@ -51,6 +51,7 @@
                                             </div>
                                         </div>
                                 </div>
+
                                 <div class="row">
 
                                         <div class="form-group">
@@ -67,6 +68,21 @@
                                         </div>
 
                                 </div>
+                    <div class="row">
+
+                        <div class="form-group">
+                            <label style="text-align: left" class="col-md-2 control-label">
+                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                สัญชาติ</label>
+                            <div class="col-md-4">
+                                <input  type="text"
+                                        name="criminal[nationality]"
+                                        value=""
+                                        class="form-control" placeholder="สัญชาติ">
+                            </div>
+                        </div>
+
+                    </div>
                             <div class="row">
 
                                 <div class="form-group">

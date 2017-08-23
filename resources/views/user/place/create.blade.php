@@ -320,6 +320,71 @@
 
                             </div>
                             <hr>
+
+                            <div class="row">
+
+                                <div class="form-group">
+                                    <label style="text-align: left" class="col-md-4 control-label"  onchange="readURL(this);">&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;อัพโหลดรูปสถานที่(*)</label>
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <label  class="col-md-2 control-label">อัพโหลดรูปสถานที่ 1(*)</label>
+                                <div class="col-md-3">
+                                    &nbsp;&nbsp;&nbsp;<img id="pic1" width="150" height="150" />
+                                </div>
+                                <div class="form-group col-md-2" align="center">
+                                    <input required  name="place[pic_path1]" type="file" onchange="document.getElementById('pic1').src = window.URL.createObjectURL(this.files[0])">
+                                </div>
+                                <label  class="col-md-2 control-label">
+                                    คำอธิบายรูปสถานที่ 1</label>
+                                <div class="col-md-3">
+                                    <input  type="text"
+                                            name="place[pic1_desc]"
+                                            value=""
+                                            class="form-control" placeholder="คำอธิบายภาพ">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label  class="col-md-2 control-label">อัพโหลดรูปสถานที่ 2</label>
+                                <div class="col-md-3">
+                                    &nbsp;&nbsp;&nbsp;<img id="pic2" width="150" height="150" />
+                                </div>
+                                <div class="form-group col-md-2" align="center">
+                                    <input name="place[pic_path2]" type="file" onchange="document.getElementById('pic2').src = window.URL.createObjectURL(this.files[0])">
+                                </div>
+                                <label  class="col-md-2 control-label">
+                                    คำอธิบายรูปสถานที่ 2</label>
+                                <div class="col-md-3">
+                                    <input  type="text"
+                                            name="place[pic2_desc]"
+                                            value=""
+                                            class="form-control" placeholder="คำอธิบายภาพ">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label  class="col-md-2 control-label">อัพโหลดรูปสถานที่ 3</label>
+                                <div class="col-md-3">
+                                    &nbsp;&nbsp;&nbsp;<img id="pic3" width="150" height="150" />
+                                </div>
+                                <div class="form-group col-md-2" align="center">
+                                    <input name="place[pic_path3]" type="file" onchange="document.getElementById('pic3').src = window.URL.createObjectURL(this.files[0])">
+                                </div>
+                                <label  class="col-md-2 control-label">
+                                    คำอธิบายรูปสถานที่ 3</label>
+                                <div class="col-md-3">
+                                    <input  type="text"
+                                            name="place[pic3_desc]"
+                                            value=""
+                                            class="form-control" placeholder="คำอธิบายภาพ">
+                                </div>
+                            </div>
+
+
+                            <hr>
                             <div class="row">
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">ระบุพิกัดเพื่อปักหมุดในแผนที่</label>

@@ -24,6 +24,8 @@ class PlaceGeneral extends Model
         "manager_current_address_tel","place_desc","place_event",
         "place_note","user_deleted","user_created","lat","lng",'time_at'
 
+        ,"pic_path1","pic_path2","pic_path3","pic1_desc","pic2_desc","pic3_desc"
+
    ];
 
 

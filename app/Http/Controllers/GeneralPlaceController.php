@@ -82,9 +82,56 @@ class GeneralPlaceController extends Controller
         $date = "$year$daymonth$hour";
 
         $form = $request->get('place');
+
+        if($request->hasFile('pic_path1')) {
+
+
+            $result = ImageuploadFacade::upload($request->file('pic_path1'));
+
+            $dimension = $result['dimensions'];
+            $size400 = $dimension['size400'];
+
+            $file_path1 = $size400['filedir'];
+
+        }
+        if($request->hasFile('pic_path2')) {
+
+
+            $result = ImageuploadFacade::upload($request->file('pic_path2'));
+
+            $dimension = $result['dimensions'];
+            $size400 = $dimension['size400'];
+
+            $file_path2 = $size400['filedir'];
+
+        }
+        if($request->hasFile('pic_path3')) {
+
+
+            $result = ImageuploadFacade::upload($request->file('pic_path3'));
+
+            $dimension = $result['dimensions'];
+            $size400 = $dimension['size400'];
+
+            $file_path3 = $size400['filedir'];
+
+        }
+
         $newPlace = new PlaceGeneral();
 
         $newPlace->fill($form);
+
+        if($request->hasFile('pic_path1')){
+            $newPlace->pic_path1 = $file_path1;
+        }
+        if($request->hasFile('pic_path2')){
+            $newPlace->pic_path2 = $file_path2;
+        }
+        if($request->hasFile('pic_path3')){
+            $newPlace->pic_path3 = $file_path3;
+        }
+
+
         $currentUser = Auth::id();
 
         $newPlace->created_by()->associate($currentUser);

@@ -93,6 +93,15 @@
     @endif
 
 </div>
+<div class="row">
+
+    @if($person->nationality)
+        สัญชาติ : <label><?php echo $person->nationality ?> </label>
+    @else
+        สัญชาติ : <label> - </label>
+    @endif
+
+</div>
 <div class="row">   <label>ที่อยู่ : <?php echo $person->current_address ?> </label></div>
 
 
