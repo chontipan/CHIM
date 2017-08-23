@@ -91,83 +91,33 @@
 
                                     </div>
                                 </a>
-
                             </div>
-                            <div class="col-lg-6 col-md-6">
-                                <a href="/general_place/map">
-                                    <div class="panel panel-info">
-                                        <div class="panel-heading">
-                                            <div class="row">
-                                                <div class="col-xs-3">
-                                                    <i class="fa fa-map fa-4x"></i>
-                                                </div>
-                                                <div class="col-xs-9 text-right">
-                                                    <div class="huge">แผนที่สถานที่ทั่วไป</div>
+                                <div class="col-lg-6 col-md-6">
+                                    <a href="/crime_place">
+                                        <div class="panel panel-warning">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <i class="fa fa-location-arrow fa-4x"></i>
+                                                    </div>
+                                                    <div class="col-xs-9 text-right">
+                                                        <div class="huge">สถานที่ที่เกี่ยวข้องกับอาชญากรรม</div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="panel-footer">
-                                            <span class="pull-left">แผนที่สถานที่ทั่วไป</span>
-                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"
-                                                                        style="color: #5cb85c;"></i></span>
-                                            <div class="clearfix"></div>
-                                        </div>
-
-                                    </div>
-                                </a>
-
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <a href="/crime_place">
-                                    <div class="panel panel-warning">
-                                        <div class="panel-heading">
-                                            <div class="row">
-                                                <div class="col-xs-3">
-                                                    <i class="fa fa-location-arrow fa-4x"></i>
-                                                </div>
-                                                <div class="col-xs-9 text-right">
-                                                    <div class="huge">สถานที่ที่เกี่ยวข้องกับอาชญากรรม</div>
-                                                </div>
+                                            <div class="panel-footer">
+                                                <span class="pull-left">สถานที่ที่เกี่ยวข้องกับอาชญากรรม</span>
+                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"
+                                                                            style="color: #5cb85c;"></i></span>
+                                                <div class="clearfix"></div>
                                             </div>
-                                        </div>
-                                        <div class="panel-footer">
-                                            <span class="pull-left">สถานที่ที่เกี่ยวข้องกับอาชญากรรม</span>
-                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"
-                                                                        style="color: #5cb85c;"></i></span>
-                                            <div class="clearfix"></div>
-                                        </div>
 
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-6 col-md-6">
-                                <a href="/crime_place/map">
-                                    <div class="panel panel-warning">
-                                        <div class="panel-heading">
-                                            <div class="row">
-                                                <div class="col-xs-3">
-                                                    <i class="fa fa-map-marker fa-4x"></i>
-                                                </div>
-                                                <div class="col-xs-9 text-right">
-                                                    <div class="huge">แผนที่สถานที่ที่เกี่ยวข้องกับอาชญากรรม</div>
-                                                </div>
-                                            </div>
                                         </div>
-                                        <div class="panel-footer">
-                                            <span class="pull-left">แผนที่สถานที่ที่เกี่ยวข้องกับอาชญากรรม</span>
-                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"
-                                                                        style="color: #5cb85c;"></i></span>
-                                            <div class="clearfix"></div>
-                                        </div>
+                                    </a>
+                                </div>
 
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+
+
 
 
                     </div>

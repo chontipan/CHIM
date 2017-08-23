@@ -13,7 +13,7 @@
             <div class="row" style="padding-top: 1em">
                 <div class="col-md-12">
                     <div class="panel panel-info">
-                        <div class="panel-heading">สถานที่ทั่วไป</div>
+                        <div class="panel-heading">สถานที่ทั่วไป <a class="btn btn-success" href="/general_place/map"><i class="fa fa-map-o"></i> ดูแบบแผนที่</a></div>
 
                         <div class="panel-body">
                         <!-- /.box-header -->

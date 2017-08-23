@@ -13,7 +13,7 @@
             <div class="row" style="padding-top: 1em">
                 <div class="col-md-12">
                     <div class="panel panel-warning">
-                        <div class="panel-heading">สถานที่ที่เกี่ยวข้องกับอาชญากรรม</div>
+                        <div class="panel-heading">สถานที่ที่เกี่ยวข้องกับอาชญากรรม <a class="btn btn-success" href="/crime_place/map"><i class="fa fa-map-o"></i> ดูแบบแผนที่</a></div>
 
                         <div class="panel-body">
                         <!-- /.box-header -->
